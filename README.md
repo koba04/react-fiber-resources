@@ -59,6 +59,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
 * [Call Stack](https://en.wikipedia.org/wiki/Call_stack)
 * [Coroutine](https://en.wikipedia.org/wiki/Coroutine)
+* [Continuation](https://en.wikipedia.org/wiki/Continuation)
 
 ## Examples
 
