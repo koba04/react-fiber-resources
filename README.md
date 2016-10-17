@@ -1,4 +1,4 @@
-# ReactFiber resources
+# ReactFiber resources [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 This is for resources for ReactFiber.
 
