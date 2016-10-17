@@ -22,6 +22,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 ## PR and Issues
 
+* [Support to render number as children #7972](https://github.com/facebook/react/pull/7972)
 * [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
 * [State Updates #7941](https://github.com/facebook/react/pull/7941)
 * [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
