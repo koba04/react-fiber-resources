@@ -1,15 +1,11 @@
 var $ = React.createElement.bind(React);
 
+var Hello = () => 'Hello ReactFiber';
+var List = () => [1, 2, 3];
+
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    return (
-      $('div', null,
-        $('p', null, 'Hello ReactFiber')
-      )
-    );
+    return [$(Hello), $('br'), $(List)];
   }
 }
 

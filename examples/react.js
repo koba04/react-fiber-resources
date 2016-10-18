@@ -10,7 +10,6 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule KeyEscapeUtils
  * 
  */
 
@@ -70,7 +69,6 @@ module.exports = KeyEscapeUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule PooledClass
  * 
  */
 
@@ -195,7 +193,6 @@ module.exports = PooledClass;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule React
  */
 
 'use strict';
@@ -285,7 +282,6 @@ module.exports = React;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactChildren
  */
 
 'use strict';
@@ -477,7 +473,6 @@ module.exports = ReactChildren;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactClass
  */
 
 'use strict';
@@ -1185,7 +1180,6 @@ module.exports = ReactClass;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactComponent
  */
 
 'use strict';
@@ -1305,7 +1299,6 @@ module.exports = ReactComponent;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule ReactComponentTreeHook
  */
 
 'use strict';
@@ -1631,7 +1624,6 @@ module.exports = ReactComponentTreeHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactCurrentOwner
  * 
  */
 
@@ -1663,7 +1655,6 @@ module.exports = ReactCurrentOwner;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMFactories
  */
 
 'use strict';
@@ -1834,7 +1825,6 @@ module.exports = ReactDOMFactories;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElement
  */
 
 'use strict';
@@ -2176,7 +2166,6 @@ module.exports = ReactElement;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElementSymbol
  * 
  */
 
@@ -2197,7 +2186,6 @@ module.exports = REACT_ELEMENT_TYPE;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElementValidator
  */
 
 /**
@@ -2425,7 +2413,6 @@ module.exports = ReactElementValidator;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactNoopUpdateQueue
  */
 
 'use strict';
@@ -2523,7 +2510,6 @@ module.exports = ReactNoopUpdateQueue;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule ReactPropTypeLocationNames
  */
 
 'use strict';
@@ -2548,7 +2534,6 @@ module.exports = ReactPropTypeLocationNames;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactPropTypes
  */
 
 'use strict';
@@ -2984,7 +2969,6 @@ module.exports = ReactPropTypes;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule ReactPropTypesSecret
  */
 
 'use strict';
@@ -3001,7 +2985,6 @@ module.exports = ReactPropTypesSecret;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactPureComponent
  */
 
 'use strict';
@@ -3044,7 +3027,6 @@ module.exports = ReactPureComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactUMDEntry
  */
 
 'use strict';
@@ -3077,7 +3059,6 @@ module.exports = ReactUMDEntry;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactVersion
  */
 
 'use strict';
@@ -3093,7 +3074,6 @@ module.exports = '16.0.0-alpha';
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule canDefineProperty
  */
 
 'use strict';
@@ -3120,7 +3100,6 @@ module.exports = canDefineProperty;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule checkReactTypeSpec
  */
 
 'use strict';
@@ -3209,7 +3188,6 @@ module.exports = checkReactTypeSpec;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getIteratorFn
  * 
  */
 
@@ -3251,7 +3229,6 @@ module.exports = getIteratorFn;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule onlyChild
  */
 'use strict';
 
@@ -3290,7 +3267,6 @@ module.exports = onlyChild;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule reactProdInvariant
  * 
  */
 'use strict';
@@ -3330,7 +3306,6 @@ module.exports = reactProdInvariant;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule traverseAllChildren
  */
 
 'use strict';
