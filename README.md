@@ -22,6 +22,9 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 ## PR and Issues
 
+* [Formalize States #8012](https://github.com/facebook/react/issues/8012)
+* [Logging protips #8009](https://github.com/facebook/react/pull/8009)
+* [Some setState related issues #8010](https://github.com/facebook/react/pull/8010)
 * [Set DOM attributes #7992](https://github.com/facebook/react/pull/7992)
 * [Initial error boundaries #7993](https://github.com/facebook/react/pull/7993)
 * [Support to render number as children #7972](https://github.com/facebook/react/pull/7972)
