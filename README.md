@@ -20,33 +20,45 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Example](https://github.com/facebook/react/tree/master/examples/fiber)
 
 
-## PR and Issues
+## PRs
 
-* [Formalize States #8012](https://github.com/facebook/react/issues/8012)
-* [Logging protips #8009](https://github.com/facebook/react/pull/8009)
-* [Some setState related issues #8010](https://github.com/facebook/react/pull/8010)
-* [Set DOM attributes #7992](https://github.com/facebook/react/pull/7992)
-* [Initial error boundaries #7993](https://github.com/facebook/react/pull/7993)
-* [Support to render number as children #7972](https://github.com/facebook/react/pull/7972)
-* [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
-* [State Updates #7941](https://github.com/facebook/react/pull/7941)
-* [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
-* [Spill-over from child reconciliation #7906](https://github.com/facebook/react/issues/7906)
-* [Child Reconciliation, Refs and Life-Cycles #7707](https://github.com/facebook/react/pull/7707)
-* [Separate priority field for pending updates #7457](https://github.com/facebook/react/pull/7457)
-* [setState #7344](https://github.com/facebook/react/pull/7344)
-* [Animation priority work #7466](https://github.com/facebook/react/pull/7466)
-* [Refactor Pending Work Phase and Progressed Work #7636](https://github.com/facebook/react/pull/7636)
-* [Fix initial mount starvation problems #7448](https://github.com/facebook/react/pull/7448)
-* [Refactor Pending Work Phase and Progressed Work #7636](https://github.com/facebook/react/pull/7636)
-* [Various minor tweaks and a few big ones #7248](https://github.com/facebook/react/pull/7248)
-* [Sierpinski Triangle Demo](https://github.com/facebook/react/pull/7180)
-* [Host Side Effects #7154](https://github.com/facebook/react/pull/7154)
-* [Host Container Fiber and Priority Levels #7034](https://github.com/facebook/react/pull/7034)
-* [Add support for simple updates and fiber pooling #6981](https://github.com/facebook/react/pull/6981)
-* [Minimize abuse of .alternate #6988](https://github.com/facebook/react/pull/6988)
-* [Child Reconciler + New Coroutines Primitive #6859](https://github.com/facebook/react/pull/6859)
-* [Transfer everything from Element onto the Fiber and use Tag instead of Stage #6903](https://github.com/facebook/react/pull/6903)
+| No | Title | Author | Status |
+| --- | ----- | ------ | ------ |
+| [#8012](https://github.com/facebook/react/issues/8012) | Formalize States | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8010](https://github.com/facebook/react/pull/8010) | Some setState related issues | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8009](https://github.com/facebook/react/pull/8009) | [NFC] Logging protips | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8001](https://github.com/facebook/react/pull/8001) | Add a unit test for ReactTopLevelText | [@koba04](https://github.com/koba04) | :rocket: |
+| [#7993](https://github.com/facebook/react/pull/7993) | Initial error boundaries | [@gaearon](https://github.com/gaearon) | |
+| [#7992](https://github.com/facebook/react/pull/7992) | Set DOM attributes | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
+| [#7972](https://github.com/facebook/react/pull/7972) | Support to render number as children | [@koba04](https://github.com/koba04) | :heavy_check_mark: |
+| [#7941](https://github.com/facebook/react/pull/7941) | State Updates | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#7707](https://github.com/facebook/react/pull/7707) | Child Reconciliation, Refs and Life-Cycles | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#7636](https://github.com/facebook/react/pull/7636) | Refactor Pending Work Phase and Progressed Work | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#7466](https://github.com/facebook/react/pull/7466) | Animation priority work | [@acdlite](https://github.com/acdlite) | :rocket: |
+| [#7457](https://github.com/facebook/react/pull/7457) | Separate priority field for pending updates | [@acdlite](https://github.com/acdlite) | |
+| [#7448](https://github.com/facebook/react/pull/7448) | Fix initial mount starvation problems | [@sebmarkbage](https://github.com/sebmarkbage) | :heavy_check_mark: |
+| [#7344](https://github.com/facebook/react/pull/7344) | setState | [@acdlite](https://github.com/acdlite) | :rocket: |
+| [#7248](https://github.com/facebook/react/pull/7248) | Various minor tweaks and a few big ones | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#7180](https://github.com/facebook/react/pull/7180) | [Not for commit] Sierpinski Triangle Demo | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#7154](https://github.com/facebook/react/pull/7154) | Host Side Effects | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#7034](https://github.com/facebook/react/pull/7034) | Host Container Fiber and Priority Levels | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#6988](https://github.com/facebook/react/pull/6988) | Minimize abuse of .alternate | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#6981](https://github.com/facebook/react/pull/6981) | Add support for simple updates and fiber pooling | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#6903](https://github.com/facebook/react/pull/6903) | Transfer everything from Element onto the Fiber and use Tag instead of Stage | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#6859](https://github.com/facebook/react/pull/6859) | Child Reconciler + New Coroutines Primitive | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+
+:rocket: is a merged PR.
+:heavy_check_mark: is a closed PR or Issue.
+
+## Issues
+
+| No | Title | Author | Status |
+| --- | ----- | ------ | ------ |
+| [#7942](https://github.com/facebook/react/issues/7942) | Fiber Principles: Contributing To Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#7925](https://github.com/facebook/react/issues/7925) | Umbrella for remaining features / bugs | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#7906](https://github.com/facebook/react/issues/7906) | Spill-over from child reconciliation | [@sebmarkbage](https://github.com/sebmarkbage) | |
+
+:heavy_check_mark: is a closed PR or Issue.
 
 
 ## Entries
