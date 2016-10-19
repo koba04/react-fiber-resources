@@ -48,7 +48,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 | [#6859](https://github.com/facebook/react/pull/6859) | Child Reconciler + New Coroutines Primitive | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 
 :rocket: is a merged PR.
-:heavy_check_mark: is a closed PR or Issue.
+:heavy_check_mark: is a closed PR.
 
 ## Issues
 
@@ -58,7 +58,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 | [#7925](https://github.com/facebook/react/issues/7925) | Umbrella for remaining features / bugs | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#7906](https://github.com/facebook/react/issues/7906) | Spill-over from child reconciliation | [@sebmarkbage](https://github.com/sebmarkbage) | |
 
-:heavy_check_mark: is a closed PR or Issue.
+:heavy_check_mark: is a closed Issue.
 
 
 ## Entries
