@@ -63,9 +63,10 @@ If you are not familiar with React internals, I recommend you to read the docume
 :heavy_check_mark: is a closed Issue.
 
 
-## Entries
+## Articles
 
 * [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
+* [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
 * [How React Fiber Works](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
 
 
