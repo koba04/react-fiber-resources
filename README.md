@@ -26,8 +26,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 | --- | ----- | ------ | ------ |
 | [#8016](https://github.com/facebook/react/pull/8016) | Add unit tests for ReactDOMFiber |  [@koba04](https://github.com/koba04) | |
 | [#8015](https://github.com/facebook/react/pull/8015) | Add more life-cycles | [@sebmarkbage](https://github.com/sebmarkbage) | |
-| [#8012](https://github.com/facebook/react/issues/8012) | Formalize States | [@sebmarkbage](https://github.com/sebmarkbage) | |
-| [#8010](https://github.com/facebook/react/pull/8010) | Some setState related issues | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8010](https://github.com/facebook/react/pull/8010) | Some setState related issues | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8009](https://github.com/facebook/react/pull/8009) | [NFC] Logging protips | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8001](https://github.com/facebook/react/pull/8001) | Add a unit test for ReactTopLevelText | [@koba04](https://github.com/koba04) | :rocket: |
 | [#7993](https://github.com/facebook/react/pull/7993) | Initial error boundaries | [@gaearon](https://github.com/gaearon) | |
@@ -56,6 +55,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8012](https://github.com/facebook/react/issues/8012) | Formalize States | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#7942](https://github.com/facebook/react/issues/7942) | Fiber Principles: Contributing To Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#7925](https://github.com/facebook/react/issues/7925) | Umbrella for remaining features / bugs | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#7906](https://github.com/facebook/react/issues/7906) | Spill-over from child reconciliation | [@sebmarkbage](https://github.com/sebmarkbage) | |
