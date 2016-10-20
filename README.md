@@ -81,6 +81,10 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Call Stack](https://en.wikipedia.org/wiki/Call_stack)
 * [Coroutine](https://en.wikipedia.org/wiki/Coroutine)
 * [Continuation](https://en.wikipedia.org/wiki/Continuation)
+* Algebraic Effects 
+  * [One-shot Delimited Continuations with Effect Handlers](https://esdiscuss.org/topic/one-shot-delimited-continuations-with-effect-handlers)
+  * [Effective Concurrency with Algebraic Effects](http://kcsrk.info/ocaml/multicore/2015/05/20/effects-multicore/)
+  * [Concurrent & Multicore OCaml: A deep dive](http://kcsrk.info/slides/multicore_fb16.pdf)
 
 ## Examples
 
