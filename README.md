@@ -24,7 +24,9 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8029](https://github.com/facebook/react/pull/8029) | Quick fix to the return top level problem | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8033](https://github.com/facebook/react/pull/8033) | Add Fiber Debugger | [@gaearon](https://github.com/gaearon) | |
+| [#8055](https://github.com/facebook/react/pull/8055) | Accept className in ReactDOMFiber | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#8029](https://github.com/facebook/react/pull/8029) | Quick fix to the return top level problem | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8028](https://github.com/facebook/react/pull/8028) | Don't call componentDidUpdate if shouldComponentUpdate returns false | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8016](https://github.com/facebook/react/pull/8016) | Add unit tests for ReactDOMFiber |  [@koba04](https://github.com/koba04) | :rocket: |
 | [#8015](https://github.com/facebook/react/pull/8015) | Add more life-cycles | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
