@@ -26,7 +26,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 | --- | ----- | ------ | ------ |
 | [#8083](https://github.com/facebook/react/pull/8083) | Implement findDOMNode and isMounted | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8072](https://github.com/facebook/react/pull/8072) | Add types for ReactFiber and ReactChildFiber |  [@koba04](https://github.com/koba04) | :rocket: |
-| [#8079](https://github.com/facebook/react/pull/8079) | | Respect state set in componentWillMount() on resuming | [@gaearon](https://github.com/gaearon) | :rocket|
+| [#8079](https://github.com/facebook/react/pull/8079) | Respect state set in componentWillMount() on resuming | [@gaearon](https://github.com/gaearon) | :rocket|
 | [#8033](https://github.com/facebook/react/pull/8033) | Add Fiber Debugger | [@gaearon](https://github.com/gaearon) | |
 | [#8055](https://github.com/facebook/react/pull/8055) | Accept className in ReactDOMFiber | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8029](https://github.com/facebook/react/pull/8029) | Quick fix to the return top level problem | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
