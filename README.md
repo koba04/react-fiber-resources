@@ -4,6 +4,9 @@ This is for resources for ReactFiber.
 
 ReactFiber is a new React reconciler algorithm, which is in progress.
 
+## Current Status?
+
+* [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
 
 ## React internal algorithm
 
