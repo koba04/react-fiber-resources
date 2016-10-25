@@ -15,10 +15,32 @@ var Items = () => (
   )
 );
 
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.initialTime = Date.now();
+    this.state = {
+      time: 0
+    };
+  }
+  tick() {
+    this.setState({
+      time: Date.now() - this.initialTime,
+    });
+    requestAnimationFrame(() => this.tick());
+  }
+  componentDidMount() {
+    this.tick();
+  }
+  render() {
+    return $('div', null, this.state.time);
+  }
+}
 
 class App extends React.Component {
   render() {
     return $(Items);
+    // return $(Timer);
     // return [$(Hello), $('br'), $(List)];
   }
 }

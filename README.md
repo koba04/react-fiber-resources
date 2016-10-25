@@ -58,6 +58,10 @@ var Items = () => (
 
 ![ReactDOMFiber function call stack with 10000 items](./images/ReactDOM-10000-items.png)
 
+## ReactFiber call tree
+
+![ReactDOMFiber call tree](./images/ReactDOMFiber-call-tree.png)
+
 ## Related Words
 
 * [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
