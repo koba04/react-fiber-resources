@@ -12,7 +12,6 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Codebase Overview](https://facebook.github.io/react/contributing/codebase-overview.html)
 * [Implementation Notes](https://facebook.github.io/react/contributing/implementation-notes.html)
 
-
 ## React Fiber
 
 * [ReactFiber](https://github.com/facebook/react/tree/master/src/renderers/shared/fiber)
@@ -30,6 +29,31 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 * [Andrew Clark: What's Next for React — ReactNext 2016](https://www.youtube.com/watch?v=aV1271hd9ew)
 
+## ReactFiber function call stacks
+
+### ReactDOMFiber
+
+![ReactFiber function call stack](./images/ReactDOMFiber.png)
+
+### ReactDOMFiber with 10000 items
+
+![ReactFiber function call stack with 10000 items](./images/ReactDOMFiber-10000-items.png)
+
+* set `hidden` props 9000 items
+
+```js
+var Items = () => (
+  $('ul', {},
+    items.map(item => $('li', {key: item.index, hidden: item.index > 1000 ? true : false}, item.name))
+  )
+);
+```
+
+![ReactFiber function call stack with 10000 items using hidden props](./images/ReactDOMFiber-10000-items-with-hidden-props.png)
+
+### ReactDOM with 10000 items
+
+![ReactDOMFiber function call stack with 10000 items](./images/ReactDOM-10000-items.png)
 
 ## Related Words
 
