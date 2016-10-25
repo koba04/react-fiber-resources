@@ -886,8 +886,13 @@ var DOMRenderer = ReactFiberReconciler({
   createInstance: function (type, props, children) {
     var domElement = document.createElement(type);
     recursivelyAppendChildren(domElement, children);
-    if (typeof props.children === 'string' || typeof props.children === 'number') {
+    if (typeof props.className !== 'undefined') {
+      domElement.className = props.className;
+    }
+    if (typeof props.children === 'string') {
       domElement.textContent = props.children;
+    } else if (typeof props.children === 'number') {
+      domElement.textContent = props.children.toString();
     }
     return domElement;
   },
@@ -895,8 +900,13 @@ var DOMRenderer = ReactFiberReconciler({
     return true;
   },
   commitUpdate: function (domElement, oldProps, newProps) {
-    if (typeof newProps.children === 'string' || typeof newProps.children === 'number') {
+    if (typeof newProps.className !== 'undefined') {
+      domElement.className = newProps.className;
+    }
+    if (typeof newProps.children === 'string') {
       domElement.textContent = newProps.children;
+    } else if (typeof newProps.children === 'number') {
+      domElement.textContent = newProps.children.toString();
     }
   },
   createTextInstance: function (text) {
@@ -933,11 +943,13 @@ function warnAboutUnstableUse() {
 var ReactDOM = {
   render: function (element, container) {
     warnAboutUnstableUse();
+    var root = void 0;
     if (!container._reactRootContainer) {
-      container._reactRootContainer = DOMRenderer.mountContainer(element, container);
+      root = container._reactRootContainer = DOMRenderer.mountContainer(element, container);
     } else {
-      DOMRenderer.updateContainer(element, container._reactRootContainer);
+      DOMRenderer.updateContainer(element, root = container._reactRootContainer);
     }
+    return DOMRenderer.getPublicRootInstance(root);
   },
   unmountComponentAtNode: function (container) {
     warnAboutUnstableUse();
@@ -1236,20 +1248,20 @@ var _require2 = _dereq_(16);
 var NoWork = _require2.NoWork;
 var OffscreenPriority = _require2.OffscreenPriority;
 
-var _require3 = _dereq_(14);
+var _require3 = _dereq_(18);
 
-var mergeUpdateQueue = _require3.mergeUpdateQueue;
-
-var _require4 = _dereq_(18);
-
-var Placement = _require4.Placement;
+var Placement = _require3.Placement;
 
 var ReactFiberClassComponent = _dereq_(8);
 
 module.exports = function (config, scheduleUpdate) {
   var _ReactFiberClassCompo = ReactFiberClassComponent(scheduleUpdate);
 
-  var mount = _ReactFiberClassCompo.mount;
+  var adoptClassInstance = _ReactFiberClassCompo.adoptClassInstance;
+  var constructClassInstance = _ReactFiberClassCompo.constructClassInstance;
+  var mountClassInstance = _ReactFiberClassCompo.mountClassInstance;
+  var resumeMountClassInstance = _ReactFiberClassCompo.resumeMountClassInstance;
+  var updateClassInstance = _ReactFiberClassCompo.updateClassInstance;
 
 
   function markChildAsProgressed(current, workInProgress, priorityLevel) {
@@ -1337,42 +1349,27 @@ module.exports = function (config, scheduleUpdate) {
   }
 
   function updateClassComponent(current, workInProgress) {
-    // A class component update is the result of either new props or new state.
-    // Account for the possibly of missing pending props by falling back to the
-    // memoized props.
-    var props = workInProgress.pendingProps;
-    if (!props && current) {
-      props = current.memoizedProps;
-    }
-    // Compute the state using the memoized state and the update queue.
-    var updateQueue = workInProgress.updateQueue;
-    var previousState = current ? current.memoizedState : null;
-    var state = updateQueue ? mergeUpdateQueue(updateQueue, previousState, props) : previousState;
-
-    var instance = workInProgress.stateNode;
-    if (!instance) {
-      var ctor = workInProgress.type;
-      workInProgress.stateNode = instance = new ctor(props);
-      mount(workInProgress, instance);
-      state = instance.state || null;
-    } else if (typeof instance.shouldComponentUpdate === 'function' && !(updateQueue && updateQueue.isForced)) {
-      if (workInProgress.memoizedProps !== null) {
-        // Reset the props, in case this is a ping-pong case rather than a
-        // completed update case. For the completed update case, the instance
-        // props will already be the memoizedProps.
-        instance.props = workInProgress.memoizedProps;
-        instance.state = workInProgress.memoizedState;
-        if (!instance.shouldComponentUpdate(props, state)) {
-          return bailoutOnAlreadyFinishedWork(current, workInProgress);
-        }
+    var shouldUpdate = void 0;
+    if (!current) {
+      if (!workInProgress.stateNode) {
+        // In the initial pass we might need to construct the instance.
+        constructClassInstance(workInProgress);
+        mountClassInstance(workInProgress);
+        shouldUpdate = true;
+      } else {
+        // In a resume, we'll already have an instance we can reuse.
+        shouldUpdate = resumeMountClassInstance(workInProgress);
       }
+    } else {
+      shouldUpdate = updateClassInstance(current, workInProgress);
     }
-
-    instance.props = props;
-    instance.state = state;
+    if (!shouldUpdate) {
+      return bailoutOnAlreadyFinishedWork(current, workInProgress);
+    }
+    // Rerender
+    var instance = workInProgress.stateNode;
     var nextChildren = instance.render();
     reconcileChildren(current, workInProgress, nextChildren);
-
     return workInProgress.child;
   }
 
@@ -1426,22 +1423,21 @@ module.exports = function (config, scheduleUpdate) {
   }
 
   function mountIndeterminateComponent(current, workInProgress) {
+    if (current) {
+      throw new Error('An indeterminate component should never have mounted.');
+    }
     var fn = workInProgress.type;
     var props = workInProgress.pendingProps;
     var value = fn(props);
     if (typeof value === 'object' && value && typeof value.render === 'function') {
       // Proceed under the assumption that this is a class instance
       workInProgress.tag = ClassComponent;
-      if (current) {
-        current.tag = ClassComponent;
-      }
+      adoptClassInstance(workInProgress, value);
+      mountClassInstance(workInProgress);
       value = value.render();
     } else {
       // Proceed under the assumption that this is a functional component
       workInProgress.tag = FunctionalComponent;
-      if (current) {
-        current.tag = FunctionalComponent;
-      }
     }
     reconcileChildren(current, workInProgress, value);
     return workInProgress.child;
@@ -1476,6 +1472,24 @@ module.exports = function (config, scheduleUpdate) {
 
   function bailoutOnAlreadyFinishedWork(current, workInProgress) {
     var priorityLevel = workInProgress.pendingWorkPriority;
+
+    if (workInProgress.tag === HostComponent && workInProgress.memoizedProps.hidden && workInProgress.pendingWorkPriority !== OffscreenPriority) {
+      // This subtree still has work, but it should be deprioritized so we need
+      // to bail out and not do any work yet.
+      // TODO: It would be better if this tree got its correct priority set
+      // during scheduleUpdate instead because otherwise we'll start a higher
+      // priority reconciliation first before we can get down here. However,
+      // that is a bit tricky since workInProgress and current can have
+      // different "hidden" settings.
+      var child = workInProgress.progressedChild;
+      while (child) {
+        // To ensure that this subtree gets its priority reset, the children
+        // need to be reset.
+        child.pendingWorkPriority = OffscreenPriority;
+        child = child.sibling;
+      }
+      return null;
+    }
 
     // TODO: We should ideally be able to bail out early if the children have no
     // more work to do. However, since we don't have a separation of this
@@ -1541,7 +1555,7 @@ module.exports = function (config, scheduleUpdate) {
         // next one immediately.
         return workInProgress.child;
       case HostComponent:
-        if (workInProgress.stateNode && config.beginUpdate) {
+        if (workInProgress.stateNode && typeof config.beginUpdate === 'function') {
           config.beginUpdate(workInProgress.stateNode);
         }
         return updateHostComponent(current, workInProgress);
@@ -1574,7 +1588,7 @@ module.exports = function (config, scheduleUpdate) {
     beginWork: beginWork
   };
 };
-},{"1":1,"14":14,"16":16,"18":18,"19":19,"8":8}],8:[function(_dereq_,module,exports){
+},{"1":1,"16":16,"18":18,"19":19,"8":8}],8:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1597,6 +1611,7 @@ var _require2 = _dereq_(14);
 var createUpdateQueue = _require2.createUpdateQueue;
 var addToQueue = _require2.addToQueue;
 var addCallbackToQueue = _require2.addCallbackToQueue;
+var mergeUpdateQueue = _require2.mergeUpdateQueue;
 
 var ReactInstanceMap = _dereq_(15);
 
@@ -1642,20 +1657,146 @@ module.exports = function (scheduleUpdate) {
     }
   };
 
-  function mount(workInProgress, instance) {
-    var state = instance.state || null;
-    // The initial state must be added to the update queue in case
-    // setState is called before the initial render.
-    if (state !== null) {
-      workInProgress.updateQueue = createUpdateQueue(state);
-    }
+  function adoptClassInstance(workInProgress, instance) {
+    instance.updater = updater;
+    workInProgress.stateNode = instance;
     // The instance needs access to the fiber so that it can schedule updates
     ReactInstanceMap.set(instance, workInProgress);
-    instance.updater = updater;
+  }
+
+  function constructClassInstance(workInProgress) {
+    var ctor = workInProgress.type;
+    var props = workInProgress.pendingProps;
+    var instance = new ctor(props);
+    adoptClassInstance(workInProgress, instance);
+    return instance;
+  }
+
+  // Invokes the mount life-cycles on a previously never rendered instance.
+  function mountClassInstance(workInProgress) {
+    var instance = workInProgress.stateNode;
+
+    var state = instance.state || null;
+
+    var props = workInProgress.pendingProps;
+    if (!props) {
+      throw new Error('There must be pending props for an initial mount.');
+    }
+
+    instance.props = props;
+    instance.state = state;
+
+    if (typeof instance.componentWillMount === 'function') {
+      instance.componentWillMount();
+      // If we had additional state updates during this life-cycle, let's
+      // process them now.
+      var updateQueue = workInProgress.updateQueue;
+      if (updateQueue) {
+        instance.state = mergeUpdateQueue(updateQueue, state, props);
+      }
+    }
+  }
+
+  // Called on a preexisting class instance. Returns false if a resumed render
+  // could be reused.
+  function resumeMountClassInstance(workInProgress) {
+    var instance = workInProgress.stateNode;
+    var newState = workInProgress.memoizedState;
+    var newProps = workInProgress.pendingProps;
+    if (!newProps) {
+      // If there isn't any new props, then we'll reuse the memoized props.
+      // This could be from already completed work.
+      newProps = workInProgress.memoizedProps;
+      if (!newProps) {
+        throw new Error('There should always be pending or memoized props.');
+      }
+    }
+
+    // TODO: Should we deal with a setState that happened after the last
+    // componentWillMount and before this componentWillMount? Probably
+    // unsupported anyway.
+
+    var updateQueue = workInProgress.updateQueue;
+
+    // If this completed, we might be able to just reuse this instance.
+    if (typeof instance.shouldComponentUpdate === 'function' && !(updateQueue && updateQueue.isForced) && workInProgress.memoizedProps !== null && !instance.shouldComponentUpdate(newProps, newState)) {
+      return false;
+    }
+
+    // If we didn't bail out we need to construct a new instance. We don't
+    // want to reuse one that failed to fully mount.
+    var newInstance = constructClassInstance(workInProgress);
+    newInstance.props = newProps;
+    newInstance.state = newState = newInstance.state || null;
+
+    if (typeof newInstance.componentWillMount === 'function') {
+      newInstance.componentWillMount();
+      // If we had additional state updates during this life-cycle, let's
+      // process them now.
+      var newUpdateQueue = workInProgress.updateQueue;
+      if (newUpdateQueue) {
+        newInstance.state = mergeUpdateQueue(newUpdateQueue, newState, newProps);
+      }
+    }
+    return true;
+  }
+
+  // Invokes the update life-cycles and returns false if it shouldn't rerender.
+  function updateClassInstance(current, workInProgress) {
+    var instance = workInProgress.stateNode;
+
+    var oldProps = workInProgress.memoizedProps || current.memoizedProps;
+    var newProps = workInProgress.pendingProps;
+    if (!newProps) {
+      // If there aren't any new props, then we'll reuse the memoized props.
+      // This could be from already completed work.
+      newProps = oldProps;
+      if (!newProps) {
+        throw new Error('There should always be pending or memoized props.');
+      }
+    }
+
+    // Note: During these life-cycles, instance.props/instance.state are what
+    // ever the previously attempted to render - not the "current". However,
+    // during componentDidUpdate we pass the "current" props.
+
+    if (oldProps !== newProps) {
+      if (typeof instance.componentWillReceiveProps === 'function') {
+        instance.componentWillReceiveProps(newProps);
+      }
+    }
+
+    // Compute the next state using the memoized state and the update queue.
+    var updateQueue = workInProgress.updateQueue;
+    var previousState = workInProgress.memoizedState;
+    // TODO: Previous state can be null.
+    var newState = void 0;
+    if (updateQueue) {
+      newState = mergeUpdateQueue(updateQueue, previousState, newProps);
+    } else {
+      newState = previousState;
+    }
+
+    if (typeof instance.shouldComponentUpdate === 'function' && !(updateQueue && updateQueue.isForced) && oldProps !== null && !instance.shouldComponentUpdate(newProps, newState)) {
+      // TODO: Should this get the new props/state updated regardless?
+      return false;
+    }
+
+    if (typeof instance.componentWillUpdate === 'function') {
+      instance.componentWillUpdate(newProps, newState);
+    }
+
+    instance.props = newProps;
+    instance.state = newState;
+    return true;
   }
 
   return {
-    mount: mount
+    adoptClassInstance: adoptClassInstance,
+    constructClassInstance: constructClassInstance,
+    mountClassInstance: mountClassInstance,
+    resumeMountClassInstance: resumeMountClassInstance,
+    updateClassInstance: updateClassInstance
   };
 };
 },{"14":14,"15":15,"16":16}],9:[function(_dereq_,module,exports){
@@ -2283,7 +2424,12 @@ module.exports = function (config) {
     performWithPriority: performWithPriority,
 
     getPublicRootInstance: function (container) {
-      return null;
+      var root = container.stateNode;
+      var containerFiber = root.current;
+      if (!containerFiber.child) {
+        return null;
+      }
+      return containerFiber.child.stateNode;
     }
   };
 };
@@ -2409,13 +2555,11 @@ module.exports = function (config) {
       }
       nextScheduledRoot = nextScheduledRoot.nextScheduledRoot;
     }
-    // TODO: This is scanning one root at a time. It should be scanning all
-    // roots for high priority work before moving on to lower priorities.
     var root = nextScheduledRoot;
     var highestPriorityRoot = null;
     var highestPriorityLevel = NoWork;
     while (root) {
-      if (highestPriorityLevel === NoWork || highestPriorityLevel > root.current.pendingWorkPriority) {
+      if (root.current.pendingWorkPriority !== NoWork && (highestPriorityLevel === NoWork || highestPriorityLevel > root.current.pendingWorkPriority)) {
         highestPriorityLevel = root.current.pendingWorkPriority;
         highestPriorityRoot = root;
       }
