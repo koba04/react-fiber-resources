@@ -58,6 +58,8 @@ var Items = () => (
 
 ![ReactDOMFiber function call stack with 10000 items](./images/ReactDOM-10000-items.png)
 
+**It's not fair because ReactDOMFiber hasn't implemented features ReactDOM has yet.**
+
 ## ReactFiber call tree
 
 ![ReactDOMFiber call tree](./images/ReactDOMFiber-call-tree.png)
