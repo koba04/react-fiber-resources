@@ -19,6 +19,34 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [ReactFiberDOM](https://github.com/facebook/react/tree/master/src/renderers/dom/fiber)
 * [Example](https://github.com/facebook/react/tree/master/examples/fiber)
 
+## Articles
+
+* [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
+* [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
+* [How React Fiber Works](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
+
+
+## Videos
+
+* [Andrew Clark: What's Next for React — ReactNext 2016](https://www.youtube.com/watch?v=aV1271hd9ew)
+
+
+## Related Words
+
+* [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
+* [Call Stack](https://en.wikipedia.org/wiki/Call_stack)
+* [Coroutine](https://en.wikipedia.org/wiki/Coroutine)
+* [Continuation](https://en.wikipedia.org/wiki/Continuation)
+* Algebraic Effects
+  * [One-shot Delimited Continuations with Effect Handlers](https://esdiscuss.org/topic/one-shot-delimited-continuations-with-effect-handlers)
+  * [Effective Concurrency with Algebraic Effects](http://kcsrk.info/ocaml/multicore/2015/05/20/effects-multicore/)
+  * [Concurrent & Multicore OCaml: A deep dive](http://kcsrk.info/slides/multicore_fb16.pdf)
+
+
+## Examples
+
+* https://koba04.github.io/react-fiber-resources/examples/
+
 
 ## PRs
 
@@ -68,31 +96,3 @@ If you are not familiar with React internals, I recommend you to read the docume
 | [#7906](https://github.com/facebook/react/issues/7906) | Spill-over from child reconciliation | [@sebmarkbage](https://github.com/sebmarkbage) | |
 
 :heavy_check_mark: is a closed Issue.
-
-
-## Articles
-
-* [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
-* [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
-* [How React Fiber Works](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
-
-
-## Videos
-
-* [Andrew Clark: What's Next for React — ReactNext 2016](https://www.youtube.com/watch?v=aV1271hd9ew)
-
-
-## Related Words
-
-* [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
-* [Call Stack](https://en.wikipedia.org/wiki/Call_stack)
-* [Coroutine](https://en.wikipedia.org/wiki/Coroutine)
-* [Continuation](https://en.wikipedia.org/wiki/Continuation)
-* Algebraic Effects 
-  * [One-shot Delimited Continuations with Effect Handlers](https://esdiscuss.org/topic/one-shot-delimited-continuations-with-effect-handlers)
-  * [Effective Concurrency with Algebraic Effects](http://kcsrk.info/ocaml/multicore/2015/05/20/effects-multicore/)
-  * [Concurrent & Multicore OCaml: A deep dive](http://kcsrk.info/slides/multicore_fb16.pdf)
-
-## Examples
-
-* https://koba04.github.io/react-fiber-resources/examples/
