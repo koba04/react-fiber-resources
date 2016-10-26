@@ -85,6 +85,7 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8102](https://github.com/facebook/react/pull/8102) |  Add top level render callbacks into ReactDOMFiber and ReactNoop | [@koba04](https://github.com/koba04) | |
 | [#8099](https://github.com/facebook/react/pull/8099) | String refs and owner tracking | [@acdlite](https://github.com/acdlite) | | 
 | [#8095](https://github.com/facebook/react/pull/8095) | Full Error Boundaries |  [@gaearon](https://github.com/gaearon) | |
 | [#8086](https://github.com/facebook/react/pull/8086) | Reorganize files for DOM renderer to make overlap between fiber/stack clearer | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
