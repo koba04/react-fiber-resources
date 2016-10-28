@@ -85,7 +85,7 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8128](https://github.com/facebook/react/pull/8128) | Some early refactoring to be able to reuse the event system | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8128](https://github.com/facebook/react/pull/8128) | Some early refactoring to be able to reuse the event system | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8127](https://github.com/facebook/react/pull/8127) |  Use synchronous scheduling by default | [@acdlite](https://github.com/acdlite) | | 
 | [#8118](https://github.com/facebook/react/pull/8118) | PureComponent | [@acdlite](https://github.com/acdlite) | :rocket: | 
 | [#8102](https://github.com/facebook/react/pull/8102) |  Add top level render callbacks into ReactDOMFiber and ReactNoop | [@koba04](https://github.com/koba04) | :rocket: |
