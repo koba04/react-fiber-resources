@@ -6,6 +6,7 @@ ReactFiber is a new React reconciler algorithm, which is in progress.
 
 ## Current Status?
 
+* [Is Fiber Ready Yet?](http://isfiberreadyyet.com/)
 * :eyes: [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
 
 ## React internal algorithm
@@ -85,12 +86,22 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8156](https://github.com/facebook/react/pull/8156) | Complete ES6 Class related errors support | [@rricard](https://github.com/rricard) | |
+| [#8155](https://github.com/facebook/react/pull/8155) | Cover all findDOMNode error cases in fiber | [@rricard](https://github.com/rricard) | |
+| [#8153](https://github.com/facebook/react/pull/8153) | Remove recursion from error handling | [@gaearon](https://github.com/gaearon) | |
+| [#8152](https://github.com/facebook/react/pull/8152) | Get ReactComponentTreeHook working | [@gaearon](https://github.com/gaearon) | |
+| [#8151](https://github.com/facebook/react/pull/8151) | Miscellaneous fixes to get more tests passing | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8150](https://github.com/facebook/react/pull/8150) | Fix tests for Fiber in ReactElement-test | [@rricard](https://github.com/rricard) | :rocket: |
+| [#8149](https://github.com/facebook/react/pull/8149) | Get a few more Fiber tests passing | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8148](https://github.com/facebook/react/pull/8148) | Rewrite some tests relying on internal APIs | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8147](https://github.com/facebook/react/pull/8147) | Fix TestUtils.findAllInRenderedTree | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8146](https://github.com/facebook/react/pull/8146) | Attempt to fix ReactDOMTextComponent test in Fiber | [@rricard](https://github.com/rricard) | |
 | [#8128](https://github.com/facebook/react/pull/8128) | Some early refactoring to be able to reuse the event system | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8127](https://github.com/facebook/react/pull/8127) |  Use synchronous scheduling by default | [@acdlite](https://github.com/acdlite) | | 
 | [#8118](https://github.com/facebook/react/pull/8118) | PureComponent | [@acdlite](https://github.com/acdlite) | :rocket: | 
 | [#8102](https://github.com/facebook/react/pull/8102) |  Add top level render callbacks into ReactDOMFiber and ReactNoop | [@koba04](https://github.com/koba04) | :rocket: |
 | [#8099](https://github.com/facebook/react/pull/8099) | String refs and owner tracking | [@acdlite](https://github.com/acdlite) | :rocket: | 
-| [#8095](https://github.com/facebook/react/pull/8095) | Full Error Boundaries |  [@gaearon](https://github.com/gaearon) | |
+| [#8095](https://github.com/facebook/react/pull/8095) | Full Error Boundaries |  [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8086](https://github.com/facebook/react/pull/8086) | Reorganize files for DOM renderer to make overlap between fiber/stack clearer | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8085](https://github.com/facebook/react/pull/8085) | Delete child when the key lines up but the type doesn't | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8083](https://github.com/facebook/react/pull/8083) | Implement findDOMNode and isMounted | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
