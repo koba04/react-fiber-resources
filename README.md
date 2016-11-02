@@ -86,7 +86,10 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8169](https://github.com/facebook/react/pull/8169) | Track passing/failing tests in fiber | [@spicyj](https://github.com/spicyj) | |
+| [#8173](https://github.com/facebook/react/pull/8173) | Assign ReactTypeOfSideEffect to ReactFiber.Fiber.effectTag correctly | [@saneyuki](https://github.com/saneyuki) | :rocket: |
+| [#8172](https://github.com/facebook/react/pull/8172) | Fix infinite loop in scheduler and add more tests | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8171](https://github.com/facebook/react/pull/8171) | Add some scheduling tests | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8169](https://github.com/facebook/react/pull/8169) | Track passing/failing tests in fiber | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8167](https://github.com/facebook/react/pull/8167) | setState inside componentDidMount/Update should be sync and batched |  [@acdlite](https://github.com/acdlite) | | 
 | [#8166](https://github.com/facebook/react/pull/8166) | Errors shouldn't interfere with scheduling | [@gaearon](https://github.com/gaearon) | |
 | [#8156](https://github.com/facebook/react/pull/8156) | Complete ES6 Class related errors support | [@rricard](https://github.com/rricard) | |
