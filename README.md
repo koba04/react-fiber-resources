@@ -94,7 +94,7 @@ var Items = () => (
 | [#8166](https://github.com/facebook/react/pull/8166) | Errors shouldn't interfere with scheduling | [@gaearon](https://github.com/gaearon) | |
 | [#8156](https://github.com/facebook/react/pull/8156) | Complete ES6 Class related errors support | [@rricard](https://github.com/rricard) | |
 | [#8155](https://github.com/facebook/react/pull/8155) | Cover all findDOMNode error cases in fiber | [@rricard](https://github.com/rricard) | |
-| [#8153](https://github.com/facebook/react/pull/8153) | Remove recursion from error handling | [@gaearon](https://github.com/gaearon) | |
+| [#8153](https://github.com/facebook/react/pull/8153) | Remove recursion from error handling | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
 | [#8152](https://github.com/facebook/react/pull/8152) | Get ReactComponentTreeHook working | [@gaearon](https://github.com/gaearon) | |
 | [#8151](https://github.com/facebook/react/pull/8151) | Miscellaneous fixes to get more tests passing | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8150](https://github.com/facebook/react/pull/8150) | Fix tests for Fiber in ReactElement-test | [@rricard](https://github.com/rricard) | :rocket: |
