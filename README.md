@@ -35,6 +35,9 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 ## ReactFiber function call stacks
 
+**[Note]** ReactFiber now behaves as synchlonous by default. See [#8127](https://github.com/facebook/react/pull/8127).
+This call stacks are results in the time when it bahaved as asynclonous.
+
 ### ReactDOMFiber
 
 ![ReactFiber function call stack](./images/ReactDOMFiber.png)
