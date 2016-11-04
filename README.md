@@ -89,6 +89,7 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8202](https://github.com/facebook/react/pull/8202) | Fix reconciling after null | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8194](https://github.com/facebook/react/pull/8194) | UpdateQueue fixes | [@acdlite](https://github.com/acdlite) | :rocket: | 
 | [#8193](https://github.com/facebook/react/pull/8193) | Initial implementation of "Task" priority | [@acdlite](https://github.com/acdlite) | |
 | [#8187](https://github.com/facebook/react/pull/8187) | Schedule animation regardless of deferred work | [@gaearon](https://github.com/gaearon) | :rocket: |
