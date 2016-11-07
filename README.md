@@ -89,9 +89,14 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | |
+| [#8212](https://github.com/facebook/react/pull/8212) | Add more tests and fix an issue with incremental error handling | [@gaearon](https://github.com/gaearon) | |
+| [#8210](https://github.com/facebook/react/pull/8210) | Make error handling more resilient | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8208](https://github.com/facebook/react/pull/8208) | UpdateQueue test | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
+| [#8206](https://github.com/facebook/react/pull/8206) | Updates from inside componentDidMount/Update should have Task priority | [@acdlite](https://github.com/acdlite) | | 
 | [#8202](https://github.com/facebook/react/pull/8202) | Fix reconciling after null | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8194](https://github.com/facebook/react/pull/8194) | UpdateQueue fixes | [@acdlite](https://github.com/acdlite) | :rocket: | 
-| [#8193](https://github.com/facebook/react/pull/8193) | Initial implementation of "Task" priority | [@acdlite](https://github.com/acdlite) | |
+| [#8193](https://github.com/facebook/react/pull/8193) | Initial implementation of "Task" priority | [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8187](https://github.com/facebook/react/pull/8187) | Schedule animation regardless of deferred work | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8186](https://github.com/facebook/react/pull/8186) | Add tests for scheduling inside callbacks | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8183](https://github.com/facebook/react/pull/8183) | Add more tests for scheduling | [@gaearon](https://github.com/gaearon) | :rocket: |
@@ -99,9 +104,9 @@ var Items = () => (
 | [#8172](https://github.com/facebook/react/pull/8172) | Fix infinite loop in scheduler and add more tests | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8171](https://github.com/facebook/react/pull/8171) | Add some scheduling tests | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8169](https://github.com/facebook/react/pull/8169) | Track passing/failing tests in fiber | [@spicyj](https://github.com/spicyj) | :rocket: |
-| [#8167](https://github.com/facebook/react/pull/8167) | setState inside componentDidMount/Update should be sync and batched |  [@acdlite](https://github.com/acdlite) | | 
-| [#8166](https://github.com/facebook/react/pull/8166) | Errors shouldn't interfere with scheduling | [@gaearon](https://github.com/gaearon) | |
-| [#8156](https://github.com/facebook/react/pull/8156) | Complete ES6 Class related errors support | [@rricard](https://github.com/rricard) | |
+| [#8167](https://github.com/facebook/react/pull/8167) | setState inside componentDidMount/Update should be sync and batched |  [@acdlite](https://github.com/acdlite) | :heavy_check_mark: | 
+| [#8166](https://github.com/facebook/react/pull/8166) | Errors shouldn't interfere with scheduling | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
+| [#8156](https://github.com/facebook/react/pull/8156) | Complete ES6 Class related errors support | [@rricard](https://github.com/rricard) | :rocket: |
 | [#8155](https://github.com/facebook/react/pull/8155) | Cover all findDOMNode error cases in fiber | [@rricard](https://github.com/rricard) | |
 | [#8153](https://github.com/facebook/react/pull/8153) | Remove recursion from error handling | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
 | [#8152](https://github.com/facebook/react/pull/8152) | Get ReactComponentTreeHook working | [@gaearon](https://github.com/gaearon) | |
