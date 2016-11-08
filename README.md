@@ -91,7 +91,7 @@ var Items = () => (
 | --- | ----- | ------ | ------ |
 | [#8227](https://github.com/facebook/react/pull/8227) | If error is not caught, unmount entire tree | [@acdlite](https://github.com/acdlite) | |
 | [#8222](https://github.com/facebook/react/issues/8222) | Should Fiber have a root field? | [@acdlite](https://github.com/acdlite) | |
-| [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | |
+| [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | :heavy_check_mark: |
 | [#8212](https://github.com/facebook/react/pull/8212) | Add more tests and fix an issue with incremental error handling | [@gaearon](https://github.com/gaearon) | |
 | [#8210](https://github.com/facebook/react/pull/8210) | Make error handling more resilient | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8208](https://github.com/facebook/react/pull/8208) | UpdateQueue test | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
