@@ -89,6 +89,8 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8227](https://github.com/facebook/react/pull/8227) | If error is not caught, unmount entire tree | [@acdlite](https://github.com/acdlite) | |
+| []() | Should Fiber have a root field? | [@acdlite](https://github.com/acdlite) | |
 | [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | |
 | [#8212](https://github.com/facebook/react/pull/8212) | Add more tests and fix an issue with incremental error handling | [@gaearon](https://github.com/gaearon) | |
 | [#8210](https://github.com/facebook/react/pull/8210) | Make error handling more resilient | [@gaearon](https://github.com/gaearon) | :rocket: |
@@ -115,7 +117,7 @@ var Items = () => (
 | [#8149](https://github.com/facebook/react/pull/8149) | Get a few more Fiber tests passing | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8148](https://github.com/facebook/react/pull/8148) | Rewrite some tests relying on internal APIs | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8147](https://github.com/facebook/react/pull/8147) | Fix TestUtils.findAllInRenderedTree | [@gaearon](https://github.com/gaearon) | :rocket: |
-| [#8146](https://github.com/facebook/react/pull/8146) | Attempt to fix ReactDOMTextComponent test in Fiber | [@rricard](https://github.com/rricard) | |
+| [#8146](https://github.com/facebook/react/pull/8146) | Attempt to fix ReactDOMTextComponent test in Fiber | [@rricard](https://github.com/rricard) | :rocket: |
 | [#8128](https://github.com/facebook/react/pull/8128) | Some early refactoring to be able to reuse the event system | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8127](https://github.com/facebook/react/pull/8127) |  Use synchronous scheduling by default | [@acdlite](https://github.com/acdlite) | :rocket: | 
 | [#8118](https://github.com/facebook/react/pull/8118) | PureComponent | [@acdlite](https://github.com/acdlite) | :rocket: | 
