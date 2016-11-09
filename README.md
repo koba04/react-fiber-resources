@@ -90,12 +90,12 @@ var Items = () => (
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
 | [#8227](https://github.com/facebook/react/pull/8227) | If error is not caught, unmount entire tree | [@acdlite](https://github.com/acdlite) | |
-| [#8222](https://github.com/facebook/react/issues/8222) | Should Fiber have a root field? | [@acdlite](https://github.com/acdlite) | |
+| [#8222](https://github.com/facebook/react/issues/8222) | Should Fiber have a root field? | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
 | [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | :heavy_check_mark: |
 | [#8212](https://github.com/facebook/react/pull/8212) | Add more tests and fix an issue with incremental error handling | [@gaearon](https://github.com/gaearon) | |
 | [#8210](https://github.com/facebook/react/pull/8210) | Make error handling more resilient | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8208](https://github.com/facebook/react/pull/8208) | UpdateQueue test | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
-| [#8206](https://github.com/facebook/react/pull/8206) | Updates from inside componentDidMount/Update should have Task priority | [@acdlite](https://github.com/acdlite) | | 
+| [#8206](https://github.com/facebook/react/pull/8206) | Updates from inside componentDidMount/Update should have Task priority | [@acdlite](https://github.com/acdlite) | :rocket: | 
 | [#8202](https://github.com/facebook/react/pull/8202) | Fix reconciling after null | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8194](https://github.com/facebook/react/pull/8194) | UpdateQueue fixes | [@acdlite](https://github.com/acdlite) | :rocket: | 
 | [#8193](https://github.com/facebook/react/pull/8193) | Initial implementation of "Task" priority | [@acdlite](https://github.com/acdlite) | :rocket: |
