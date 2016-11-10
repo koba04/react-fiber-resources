@@ -9,6 +9,10 @@ ReactFiber is a new React reconciler algorithm, which is in progress.
 * [Is Fiber Ready Yet?](http://isfiberreadyyet.com/)
 * :eyes: [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
 
+## How to contribute ReactFiber
+
+* https://github.com/facebook/react/issues/7925#issuecomment-259258900
+
 ## React internal algorithm
 
 If you are not familiar with React internals, I recommend you to read the documentations, which are very helpful.
