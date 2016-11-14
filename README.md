@@ -93,13 +93,15 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8272](https://github.com/facebook/react/pull/8272) | Initial implementation of context | [@gaearon](https://github.com/gaearon) | |
 | [#8263](https://github.com/facebook/react/pull/8263) | Use ReactDOM.unstable_batchedUpdates in Fiber tests | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8258](https://github.com/facebook/react/pull/8258) | Fix reactComponentExpect | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8257](https://github.com/facebook/react/pull/8257) | Fix TestUtils edge cases | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8247](https://github.com/facebook/react/pull/8247) | Normalize className passed to dom from fiber | [@sdougbrown](https://github.com/sdougbrown) | :heavy_check_mark: |
 | [#8243](https://github.com/facebook/react/pull/8243) | Warn when shoulcComponentUpdate returns undefined | [@koba04](https://github.com/koba04) | :rocket: |
-| [#8242](https://github.com/facebook/react/pull/8242) | Handles risky callbacks on setState. Fixes | [@ankeetmaini](https://github.com/ankeetmaini) | |
-| [#8227](https://github.com/facebook/react/pull/8227) | If error is not caught, unmount entire tree | [@acdlite](https://github.com/acdlite) | |
+| [#8242](https://github.com/facebook/react/pull/8242) | Handles risky callbacks on setState. Fixes | [@ankeetmaini](https://github.com/ankeetmaini) | :rocket: |
+| [#8238](https://github.com/facebook/react/issues/8238) | Handle errors in callbacks | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
+| [#8227](https://github.com/facebook/react/pull/8227) | Force rerender a failed tree | [@acdlite](https://github.com/acdlite) | |
 | [#8222](https://github.com/facebook/react/issues/8222) | Should Fiber have a root field? | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
 | [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | :heavy_check_mark: |
 | [#8212](https://github.com/facebook/react/pull/8212) | Add more tests and fix an issue with incremental error handling | [@gaearon](https://github.com/gaearon) | |
