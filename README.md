@@ -93,6 +93,11 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8337](https://github.com/facebook/react/pull/8337) | Subtrees and portals | [@gaearon](https://github.com/gaearon) | |
+| [#8334](https://github.com/facebook/react/pull/8334) | Make numerical refs work in Fiber | [@spicyj](https://github.com/spicyj) | :rocket: |
+| [#8331](https://github.com/facebook/react/pull/8331) | Clear existing text content before inserting children | [@acdlite](https://github.com/acdlite) | |
+| [#8319](https://github.com/facebook/react/pull/8319) | Fork ReactDOMComponent | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8304](https://github.com/facebook/react/pull/8304) | New error boundary semantics | [@acdlite](https://github.com/acdlite) | |
 | [#8290](https://github.com/facebook/react/pull/8290) | Removes UpdateQueueNode.callbackWasCalled | [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8272](https://github.com/facebook/react/pull/8272) | Initial implementation of context | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8263](https://github.com/facebook/react/pull/8263) | Use ReactDOM.unstable_batchedUpdates in Fiber tests | [@gaearon](https://github.com/gaearon) | :rocket: |
