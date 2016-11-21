@@ -93,10 +93,13 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8361](https://github.com/facebook/react/pull/8361) | React Native Fiber | [@edvinerikson](https://github.com/edvinerikson) | |
+| [#8349](https://github.com/facebook/react/pull/8349) | Fix ReactDOMFiberSelect to set the initial values | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: | 
+| [#8347](https://github.com/facebook/react/pull/8347) | Handle controlled components | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: | 
 | [#8337](https://github.com/facebook/react/pull/8337) | Subtrees and portals | [@gaearon](https://github.com/gaearon) | |
 | [#8334](https://github.com/facebook/react/pull/8334) | Make numerical refs work in Fiber | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8331](https://github.com/facebook/react/pull/8331) | Clear existing text content before inserting children | [@acdlite](https://github.com/acdlite) | |
-| [#8319](https://github.com/facebook/react/pull/8319) | Fork ReactDOMComponent | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8319](https://github.com/facebook/react/pull/8319) | Fork ReactDOMComponent | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8304](https://github.com/facebook/react/pull/8304) | New error boundary semantics | [@acdlite](https://github.com/acdlite) | |
 | [#8290](https://github.com/facebook/react/pull/8290) | Removes UpdateQueueNode.callbackWasCalled | [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8272](https://github.com/facebook/react/pull/8272) | Initial implementation of context | [@gaearon](https://github.com/gaearon) | :rocket: |
@@ -107,6 +110,7 @@ var Items = () => (
 | [#8243](https://github.com/facebook/react/pull/8243) | Warn when shoulcComponentUpdate returns undefined | [@koba04](https://github.com/koba04) | :rocket: |
 | [#8242](https://github.com/facebook/react/pull/8242) | Handles risky callbacks on setState. Fixes | [@ankeetmaini](https://github.com/ankeetmaini) | :rocket: |
 | [#8238](https://github.com/facebook/react/issues/8238) | Handle errors in callbacks | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
+| [#8232](https://github.com/facebook/react/pull/8232) | Add support for Fibers in ReactDOMComponentTree and ReactTreeTraversal | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8227](https://github.com/facebook/react/pull/8227) | Force rerender a failed tree | [@acdlite](https://github.com/acdlite) | |
 | [#8222](https://github.com/facebook/react/issues/8222) | Should Fiber have a root field? | [@acdlite](https://github.com/acdlite) | :heavy_check_mark: |
 | [#8216](https://github.com/facebook/react/pull/8216) | WIP context | [@edvinerikson](https://github.com/edvinerikson) | :heavy_check_mark: |
