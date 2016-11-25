@@ -93,7 +93,12 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8400](https://github.com/facebook/react/pull/8400) | Update root children using appendChild/insertBefore/removeChild | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8417](https://github.com/facebook/react/pull/8417) | Support SVG and append children in the begin phase | [@gaearon](https://github.com/gaearon) | |
+| [#8416](https://github.com/facebook/react/pull/8416) | Add a test for nested portals | [@gaearon](https://github.com/gaearon) | :rocket: |
+| []() | Swap .child and .stateNode in coroutines | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8413](https://github.com/facebook/react/pull/8413) | Add failing tests for coroutines | [@gaearon](https://github.com/gaearon) | |
+| [#8406](https://github.com/facebook/react/pull/8406) | Remove output field | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#8400](https://github.com/facebook/react/pull/8400) | Update root children using appendChild/insertBefore/removeChild | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8386](https://github.com/facebook/react/pull/8386) | Add ReactDOMFiber.unstable_createPortal() | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8371](https://github.com/facebook/react/pull/8371) | Handle Bailed Out HostText update and MultiChildText test | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8368](https://github.com/facebook/react/pull/8368) | renderSubtreeIntoContainer | [@spicyj](https://github.com/spicyj) | :rocket: |
