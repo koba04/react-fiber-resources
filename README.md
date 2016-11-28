@@ -93,6 +93,7 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8422](https://github.com/facebook/react/pull/8422) | Fix portal unmounting | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8417](https://github.com/facebook/react/pull/8417) | Support SVG and append children in the begin phase | [@gaearon](https://github.com/gaearon) | |
 | [#8416](https://github.com/facebook/react/pull/8416) | Add a test for nested portals | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8414](https://github.com/facebook/react/pull/8414) | Swap .child and .stateNode in coroutines | [@sebmarkbage](https://github.com/sebmarkbage) | |
