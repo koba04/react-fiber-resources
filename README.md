@@ -93,15 +93,17 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8446](https://github.com/facebook/react/pull/8446) | Support iterables | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8422](https://github.com/facebook/react/pull/8422) | Fix portal unmounting | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8417](https://github.com/facebook/react/pull/8417) | Support SVG and append children in the begin phase | [@gaearon](https://github.com/gaearon) | |
+| [#8450](https://github.com/facebook/react/pull/8450) | Fix findDOMNode and findAllInRenderedTree | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8416](https://github.com/facebook/react/pull/8416) | Add a test for nested portals | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8414](https://github.com/facebook/react/pull/8414) | Swap .child and .stateNode in coroutines | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8413](https://github.com/facebook/react/pull/8413) | Add failing tests for coroutines | [@gaearon](https://github.com/gaearon) | |
 | [#8406](https://github.com/facebook/react/pull/8406) | Remove output field | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8400](https://github.com/facebook/react/pull/8400) | Update root children using appendChild/insertBefore/removeChild | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8386](https://github.com/facebook/react/pull/8386) | Add ReactDOMFiber.unstable_createPortal() | [@gaearon](https://github.com/gaearon) | :rocket: |
-| [#8371](https://github.com/facebook/react/pull/8371) | Handle Bailed Out HostText update and MultiChildText test | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8371](https://github.com/facebook/react/pull/8371) | Handle Bailed Out HostText update and MultiChildText test | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8368](https://github.com/facebook/react/pull/8368) | renderSubtreeIntoContainer | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8361](https://github.com/facebook/react/pull/8361) | React Native Fiber | [@edvinerikson](https://github.com/edvinerikson) | |
 | [#8349](https://github.com/facebook/react/pull/8349) | Fix ReactDOMFiberSelect to set the initial values | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: | 
