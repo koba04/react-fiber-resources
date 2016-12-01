@@ -95,7 +95,7 @@ var Items = () => (
 | --- | ----- | ------ | ------ |
 | [#8446](https://github.com/facebook/react/pull/8446) | Support iterables | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8422](https://github.com/facebook/react/pull/8422) | Fix portal unmounting | [@gaearon](https://github.com/gaearon) | :rocket: |
-| [#8417](https://github.com/facebook/react/pull/8417) | Support SVG and append children in the begin phase | [@gaearon](https://github.com/gaearon) | |
+| [#8417](https://github.com/facebook/react/pull/8417) | Support SVG and append children in the begin phase | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
 | [#8450](https://github.com/facebook/react/pull/8450) | Fix findDOMNode and findAllInRenderedTree | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8416](https://github.com/facebook/react/pull/8416) | Add a test for nested portals | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8414](https://github.com/facebook/react/pull/8414) | Swap .child and .stateNode in coroutines | [@sebmarkbage](https://github.com/sebmarkbage) | |
@@ -112,7 +112,7 @@ var Items = () => (
 | [#8334](https://github.com/facebook/react/pull/8334) | Make numerical refs work in Fiber | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8331](https://github.com/facebook/react/pull/8331) | Clear existing text content before inserting children | [@acdlite](https://github.com/acdlite) | |
 | [#8319](https://github.com/facebook/react/pull/8319) | Fork ReactDOMComponent | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
-| [#8304](https://github.com/facebook/react/pull/8304) | New error boundary semantics | [@acdlite](https://github.com/acdlite) | |
+| [#8304](https://github.com/facebook/react/pull/8304) | New error boundary semantics | [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8290](https://github.com/facebook/react/pull/8290) | Removes UpdateQueueNode.callbackWasCalled | [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8272](https://github.com/facebook/react/pull/8272) | Initial implementation of context | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8263](https://github.com/facebook/react/pull/8263) | Use ReactDOM.unstable_batchedUpdates in Fiber tests | [@gaearon](https://github.com/gaearon) | :rocket: |
