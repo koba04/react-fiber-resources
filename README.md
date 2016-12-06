@@ -93,12 +93,15 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8491](https://github.com/facebook/react/pull/8491) | Read Event Handlers from the "Current" Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8485](https://github.com/facebook/react/pull/8485) | Demonstrate an error boundary bug | [@gaearon](https://github.com/gaearon) | |
+| [#8479](https://github.com/facebook/react/pull/8479) | Scheduler improvements | [@acdlite](https://github.com/acdlite) | |
 | [#8475](https://github.com/facebook/react/pull/8475) | Support SVG | [@gaearon](https://github.com/gaearon) | |
 | [#8474](https://github.com/facebook/react/pull/8474) | Rename HostContainer => HostRoot, Portal => HostPortal | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8446](https://github.com/facebook/react/pull/8446) | Support iterables | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8422](https://github.com/facebook/react/pull/8422) | Fix portal unmounting | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8417](https://github.com/facebook/react/pull/8417) | Support SVG and append children in the begin phase | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
-| [#8450](https://github.com/facebook/react/pull/8450) | Fix findDOMNode and findAllInRenderedTree | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8450](https://github.com/facebook/react/pull/8450) | Fix findDOMNode and findAllInRenderedTree | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8416](https://github.com/facebook/react/pull/8416) | Add a test for nested portals | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8414](https://github.com/facebook/react/pull/8414) | Swap .child and .stateNode in coroutines | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8413](https://github.com/facebook/react/pull/8413) | Add failing tests for coroutines | [@gaearon](https://github.com/gaearon) | |
