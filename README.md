@@ -93,7 +93,8 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8491](https://github.com/facebook/react/pull/8491) | Read Event Handlers from the "Current" Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8491](https://github.com/facebook/react/pull/8491) | Read Event Handlers from the "Current" Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
+| [#8490](https://github.com/facebook/react/pull/8490) | Support SVG | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8485](https://github.com/facebook/react/pull/8485) | Demonstrate an error boundary bug | [@gaearon](https://github.com/gaearon) | |
 | [#8479](https://github.com/facebook/react/pull/8479) | Scheduler improvements | [@acdlite](https://github.com/acdlite) | |
 | [#8475](https://github.com/facebook/react/pull/8475) | Support SVG | [@gaearon](https://github.com/gaearon) | |
