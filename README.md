@@ -93,6 +93,10 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8545](https://github.com/facebook/react/pull/8545) | Make Fiber a disjoint union based on the tag | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8544](https://github.com/facebook/react/pull/8544) | Remove array indirection in host context |  [@gaearon](https://github.com/gaearon) | |
+| [#8538](https://github.com/facebook/react/pull/8538) | Separate priority for updates | [@acdlite](https://github.com/acdlite) | |
+| [#8532](https://github.com/facebook/react/pull/8532) | Fix portal bugs | [@gaearon](https://github.com/gaearon) | |
 | [#8491](https://github.com/facebook/react/pull/8491) | Read Event Handlers from the "Current" Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8490](https://github.com/facebook/react/pull/8490) | Support SVG | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8485](https://github.com/facebook/react/pull/8485) | Demonstrate an error boundary bug | [@gaearon](https://github.com/gaearon) | |
@@ -111,7 +115,7 @@ var Items = () => (
 | [#8386](https://github.com/facebook/react/pull/8386) | Add ReactDOMFiber.unstable_createPortal() | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8371](https://github.com/facebook/react/pull/8371) | Handle Bailed Out HostText update and MultiChildText test | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8368](https://github.com/facebook/react/pull/8368) | renderSubtreeIntoContainer | [@spicyj](https://github.com/spicyj) | :rocket: |
-| [#8361](https://github.com/facebook/react/pull/8361) | React Native Fiber | [@edvinerikson](https://github.com/edvinerikson) | |
+| [#8361](https://github.com/facebook/react/pull/8361) | React Native Fiber | [@edvinerikson](https://github.com/edvinerikson) | :heavy_check_mark: |
 | [#8349](https://github.com/facebook/react/pull/8349) | Fix ReactDOMFiberSelect to set the initial values | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: | 
 | [#8347](https://github.com/facebook/react/pull/8347) | Handle controlled components | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: | 
 | [#8337](https://github.com/facebook/react/pull/8337) | Subtrees and portals | [@gaearon](https://github.com/gaearon) | :heavy_check_mark: |
