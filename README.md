@@ -93,11 +93,14 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8570](https://github.com/facebook/react/pull/8570) | Fix some of the warnings | [@gaearon](https://github.com/gaearon) | |
-| [#8560](https://github.com/facebook/react/pull/8560) | ReactNative fiber renderer | [@bvaughn](https://github.com/bvaughn) | |
+| [#8587](https://github.com/facebook/react/pull/8587) | UpdateQueue follow-up improvements | [@acdlite](https://github.com/acdlite) | |
+| [#8586](https://github.com/facebook/react/pull/8586) | Nesting validation warnings | [@gaearon](https://github.com/gaearon) | |
+| [#8584](https://github.com/facebook/react/pull/8584) | Queue top-level updates |  [@acdlite](https://github.com/acdlite) | |
+| [#8570](https://github.com/facebook/react/pull/8570) | Fix some of the warnings | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8560](https://github.com/facebook/react/pull/8560) | ReactNative fiber renderer | [@bvaughn](https://github.com/bvaughn) | :rocket: |
 | [#8545](https://github.com/facebook/react/pull/8545) | Make Fiber a disjoint union based on the tag | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#8544](https://github.com/facebook/react/pull/8544) | Remove array indirection in host context |  [@gaearon](https://github.com/gaearon) | :rocket: |
-| [#8538](https://github.com/facebook/react/pull/8538) | Separate priority for updates | [@acdlite](https://github.com/acdlite) | |
+| [#8538](https://github.com/facebook/react/pull/8538) | Separate priority for updates | [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8532](https://github.com/facebook/react/pull/8532) | Fix portal bugs | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8491](https://github.com/facebook/react/pull/8491) | Read Event Handlers from the "Current" Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8490](https://github.com/facebook/react/pull/8490) | Support SVG | [@gaearon](https://github.com/gaearon) | :rocket: |
