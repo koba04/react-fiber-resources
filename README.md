@@ -36,6 +36,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 ## Videos
 
 * [Andrew Clark: What's Next for React — ReactNext 2016](https://www.youtube.com/watch?v=aV1271hd9ew)
+* [Why, What, and How of React Fiber with Dan Abramov and Andrew Clark](https://www.youtube.com/watch?v=crM1iRVGpGQ)
 
 ## ReactFiber function call stacks
 
