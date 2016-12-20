@@ -94,9 +94,12 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8587](https://github.com/facebook/react/pull/8587) | UpdateQueue follow-up improvements | [@acdlite](https://github.com/acdlite) | |
-| [#8586](https://github.com/facebook/react/pull/8586) | Nesting validation warnings | [@gaearon](https://github.com/gaearon) | |
-| [#8584](https://github.com/facebook/react/pull/8584) | Queue top-level updates |  [@acdlite](https://github.com/acdlite) | |
+| [#8607](https://github.com/facebook/react/pull/8607) | Compute the Host Diff During Reconciliation | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#8606](https://github.com/facebook/react/pull/8606) | Queue top-level updates (take 2) | [@acdlite](https://github.com/acdlite) | :rocket: |
+| [#8595](https://github.com/facebook/react/pull/8595) | Proof-of-concept: Promise as element type | [@acdlite](https://github.com/acdlite) | |
+| [#8587](https://github.com/facebook/react/pull/8587) | UpdateQueue follow-up improvements | [@acdlite](https://github.com/acdlite) | :rocket: |
+| [#8586](https://github.com/facebook/react/pull/8586) | Nesting validation warnings | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8584](https://github.com/facebook/react/pull/8584) | Queue top-level updates |  [@acdlite](https://github.com/acdlite) | :rocket: |
 | [#8570](https://github.com/facebook/react/pull/8570) | Fix some of the warnings | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8560](https://github.com/facebook/react/pull/8560) | ReactNative fiber renderer | [@bvaughn](https://github.com/bvaughn) | :rocket: |
 | [#8545](https://github.com/facebook/react/pull/8545) | Make Fiber a disjoint union based on the tag | [@sebmarkbage](https://github.com/sebmarkbage) | |
