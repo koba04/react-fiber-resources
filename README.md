@@ -94,7 +94,14 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8638](https://github.com/facebook/react/pull/8638) | Fix rendering SVG into non-React SVG tree | [@gaearon](https://github.com/gaearon) | |
+| [#8637](https://github.com/facebook/react/pull/8637) | Include owner in invalid element type invariant | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8635](https://github.com/facebook/react/pull/8635) | warn for refs on SFCs | [@iamdustan](https://github.com/iamdustan) | |
+| [#8634](https://github.com/facebook/react/pull/8634) | Sync mount and unmount | [@acdlite](https://github.com/acdlite) | |
+| [#8631](https://github.com/facebook/react/pull/8631) | Pass prevContext param to componentDidUpdate | [@bvaughn](https://github.com/bvaughn) | |
+| [#8628](https://github.com/facebook/react/pull/8628) | Fiber test renderer | [@iamdustan](https://github.com/iamdustan) | |
 | [#8627](https://github.com/facebook/react/pull/8627) | Push class context providers even if they crash | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8623](https://github.com/facebook/react/pull/8623) | Fix reentrant mounting in synchronous mode | [@spicyj](https://github.com/spicyj) | :rocket: |
 | [#8613](https://github.com/facebook/react/pull/8613) | Refactor bailoutOnFinishedWork | [@sebmarkbage](https://github.com/sebmarkbage) | :rocket: |
 | [#8611]() | Added ReactFiberStack shared by ReactFiberContext and ReactFiberHostContext | [@bvaughn](https://github.com/bvaughn) | :rocket: |
 | [#8610](https://github.com/facebook/react/pull/8610) | Handle errors thrown when committing root | [@acdlite](https://github.com/acdlite) | :rocket: |
