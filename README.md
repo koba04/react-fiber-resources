@@ -94,6 +94,8 @@ var Items = () => (
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#8648](https://github.com/facebook/react/pull/8648) | Throw on undefined component output | [@gaearon](https://github.com/gaearon) | :rocket: |
+| [#8646](https://github.com/facebook/react/pull/8646) | Renderers can queue commit effects for initial mount | [@bvaughn](https://github.com/bvaughn) | :rocket: |
 | [#8638](https://github.com/facebook/react/pull/8638) | Fix rendering SVG into non-React SVG tree | [@gaearon](https://github.com/gaearon) | |
 | [#8637](https://github.com/facebook/react/pull/8637) | Include owner in invalid element type invariant | [@gaearon](https://github.com/gaearon) | :rocket: |
 | [#8635](https://github.com/facebook/react/pull/8635) | warn for refs on SFCs | [@iamdustan](https://github.com/iamdustan) | |
