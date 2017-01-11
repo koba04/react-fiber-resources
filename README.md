@@ -9,6 +9,14 @@ ReactFiber is a new React reconciler algorithm, which is in progress.
 * [Is Fiber Ready Yet?](http://isfiberreadyyet.com/)
 * :eyes: [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
 
+## Try ReactFiber with asynchronous scheduling!
+
+```
+npm i -S react@next react-dom@next
+sed -i -e 's/ReactDOM/ReactDOMFiber/' node_modules/react-dom/index.js
+sed -i -e 's/useSyncScheduling: true/useSyncScheduling: false/' node_modules/react-dom/lib/ReactDOMFiber.js
+```
+
 ## How to contribute ReactFiber
 
 * https://github.com/facebook/react/issues/7925#issuecomment-259258900
