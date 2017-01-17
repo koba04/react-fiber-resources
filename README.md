@@ -34,11 +34,12 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [ReactFiberDOM](https://github.com/facebook/react/tree/master/src/renderers/dom/fiber)
 * [Example](https://github.com/facebook/react/tree/master/examples/fiber)
 
-## Articles
+## Articles & Slides
 
 * [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
 * [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
 * [How React Fiber Works](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
+* [React Internals](https://zackargyle.github.io/react-internals-slides/)
 
 
 ## Videos
