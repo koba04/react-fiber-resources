@@ -14,6 +14,10 @@ ReactFiber is a new React reconciler algorithm, which is in progress.
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Want to see Fiber in action? You can now beta test Fiber on Facebook itself! Head over to <a href="https://t.co/5cHyMgk7PL">https://t.co/5cHyMgk7PL</a> for info. <a href="https://t.co/NItNdk1jQK">pic.twitter.com/NItNdk1jQK</a></p>&mdash; React (@reactjs) <a href="https://twitter.com/reactjs/status/822707133024112640">January 21, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+* https://www.beta.facebook.com/ (facebook.com powered by ReactFiber)
+* https://www.facebook.com/groups/reactfiberbeta/ (a public channel for ReactFiber beta testers)
+
+
 ## Try ReactFiber with asynchronous scheduling!
 
 ```a
