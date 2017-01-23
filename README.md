@@ -22,6 +22,10 @@ sed -i -e 's/ReactDOM/ReactDOMFiber/' node_modules/react-dom/index.js
 sed -i -e 's/useSyncScheduling: true/useSyncScheduling: false/' node_modules/react-dom/lib/ReactDOMFiber.js
 ```
 
+## Visualized ReactFiber
+
+* [Fiber Debugger](https://github.com/facebook/react/tree/master/examples/fiber/debugger)
+
 ## How to contribute ReactFiber
 
 * https://github.com/facebook/react/issues/7925#issuecomment-259258900
