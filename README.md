@@ -106,6 +106,71 @@ var Items = () => (
   * [Effective Concurrency with Algebraic Effects](http://kcsrk.info/ocaml/multicore/2015/05/20/effects-multicore/)
   * [Concurrent & Multicore OCaml: A deep dive](http://kcsrk.info/slides/multicore_fb16.pdf)
 
+## Custom Renderer Interface
+
+You should implement the following interface when create a custom fiber renderer.
+
+* https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/ReactFiberReconciler.js
+
+```js
+export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
+
+  getRootHostContext(rootContainerInstance : C) : CX,
+  getChildHostContext(parentHostContext : CX, type : T) : CX,
+  getPublicInstance(instance : I | TI) : PI,
+
+  createInstance(
+    type : T,
+    props : P,
+    rootContainerInstance : C,
+    hostContext : CX,
+    internalInstanceHandle : OpaqueHandle
+  ) : I,
+  appendInitialChild(parentInstance : I, child : I | TI) : void,
+  finalizeInitialChildren(parentInstance : I, type : T, props : P, rootContainerInstance : C) : boolean,
+
+  prepareUpdate(
+    instance : I,
+    type : T,
+    oldProps : P,
+    newProps : P,
+    rootContainerInstance : C,
+    hostContext : CX
+  ) : null | PL,
+  commitUpdate(
+    instance : I,
+    updatePayload : PL,
+    type : T,
+    oldProps : P,
+    newProps : P,
+    internalInstanceHandle : OpaqueHandle
+  ) : void,
+  commitMount(instance : I, type : T, newProps : P, internalInstanceHandle : OpaqueHandle) : void,
+
+  shouldSetTextContent(props : P) : boolean,
+  resetTextContent(instance : I) : void,
+
+  createTextInstance(
+    text : string,
+    rootContainerInstance : C,
+    hostContext : CX,
+    internalInstanceHandle : OpaqueHandle
+  ) : TI,
+  commitTextUpdate(textInstance : TI, oldText : string, newText : string) : void,
+
+  appendChild(parentInstance : I | C, child : I | TI) : void,
+  insertBefore(parentInstance : I | C, child : I | TI, beforeChild : I | TI) : void,
+  removeChild(parentInstance : I | C, child : I | TI) : void,
+
+  scheduleAnimationCallback(callback : () => void) : number | void,
+  scheduleDeferredCallback(callback : (deadline : Deadline) => void) : number | void,
+
+  prepareForCommit() : void,
+  resetAfterCommit() : void,
+
+  useSyncScheduling ?: boolean,
+};
+```
 
 ## Examples
 
