@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOMFiber from 'react-dom';
+import ReactDOM from 'react-dom/lib/ReactDOM';
 
 var Hello = () => 'Hello ReactFiber';
 var List = () => [1, 2, 3];
@@ -26,14 +27,12 @@ class Counter extends React.Component {
   tick() {
     this.setState({
       time: Date.now() - this.initialTime,
+    }, () => {
+      requestAnimationFrame(() => this.tick());
     });
-    this.id = requestAnimationFrame(() => this.tick());
   }
   componentDidMount() {
     this.tick();
-  }
-  componentWillUnmount() {
-    cancelAnimationFrame(this.id);
   }
   render() {
     return <div>{this.state.time}</div>;
@@ -42,17 +41,28 @@ class Counter extends React.Component {
 
 const App = () => [<Hello />, <br />, <List />];
 
-const render = (element) => {
+const render = (element, renderer = ReactDOMFiber) => {
   const container = document.getElementById('app');
-  ReactDOM.unmountComponentAtNode(container);
-  ReactDOM.render(element, container);
+  const div = document.createElement('div');
+  container.innerHTML = '';
+  renderer.unmountComponentAtNode(container);
+  container.appendChild(div);
+  renderer.render(element, div);
 };
 
 const Nav = () => (
   <div>
-    <button onClick={() => render(<App />)}>Hello</button>
-    <button onClick={() => render(<Items />)}>10,000 items</button>
-    <button onClick={() => render(<Counter />)}>Counter</button>
+    <h3>ReactDOMFiber</h3>
+    <div>
+      <button onClick={() => render(<App />)}>Hello</button>
+      <button onClick={() => render(<Items />)}>10,000 items</button>
+      <button onClick={() => render(<Counter />)}>Counter</button>
+    </div>
+    <h3>ReactDOM <span style={{color: 'tomato'}}>not Fiber</span></h3>
+    <div>
+      <button onClick={() => render(<Items />, ReactDOM)}>10,000 items</button>
+      <button onClick={() => render(<Counter />, ReactDOM)}>Counter</button>
+    </div>
   </div>
 );
-ReactDOM.render(<Nav />, document.getElementById('nav'));
+ReactDOMFiber.render(<Nav />, document.getElementById('nav'));
