@@ -22,7 +22,6 @@ ReactFiber is a new React reconciler algorithm, which is in progress.
 
 ```a
 npm i -S react@next react-dom@next
-sed -i -e 's/ReactDOM/ReactDOMFiber/' node_modules/react-dom/index.js
 sed -i -e 's/useSyncScheduling: true/useSyncScheduling: false/' node_modules/react-dom/lib/ReactDOMFiber.js
 ```
 
@@ -69,21 +68,17 @@ This call stacks are results in the time when it bahaved as asynclonous.
 
 ![ReactFiber function call stack](./images/ReactDOMFiber.png)
 
-### ReactDOMFiber with 10000 items
+### ReactDOM
 
-![ReactFiber function call stack with 10000 items](./images/ReactDOMFiber-10000-items.png)
+![ReactDOM function call stack](./images/ReactDOM.png)
 
-* set `hidden` props 9000 items
+### ReactDOMFiber with 10000 items (Async Scheduling)
 
-```js
-var Items = () => (
-  $('ul', {},
-    items.map(item => $('li', {key: item.index, hidden: item.index > 1000 ? true : false}, item.name))
-  )
-);
-```
+![ReactFiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
 
-![ReactFiber function call stack with 10000 items using hidden props](./images/ReactDOMFiber-10000-items-with-hidden-props.png)
+### ReactDOMFiber with 10000 items (Sync Scheduling)
+
+![ReactFiber function call stack with 10000 items (sync)](./images/ReactDOMFiber-10000-items-sync.png)
 
 ### ReactDOM with 10000 items
 
@@ -186,7 +181,7 @@ export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
-| [#8238](https://github.com/facebook/react/issues/8238) | Handle errors in callbacks | [@acdlite](https://github.com/acdlite) | | 
+| [#8238](https://github.com/facebook/react/issues/8238) | Handle errors in callbacks | [@acdlite](https://github.com/acdlite) | |
 | [#8181](https://github.com/facebook/react/issues/8181) | Error handling | [@gaearon](https://github.com/gaearon) | |
 | [#8012](https://github.com/facebook/react/issues/8012) | Formalize States | [@sebmarkbage](https://github.com/sebmarkbage) | |
 | [#7942](https://github.com/facebook/react/issues/7942) | Fiber Principles: Contributing To Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | |

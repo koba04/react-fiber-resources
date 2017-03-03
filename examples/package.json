@@ -1,0 +1,31 @@
+{
+  "name": "react-fiber-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "enable:asyncschedule": "sed -i -e 's/useSyncScheduling: true/useSyncScheduling: false/' node_modules/react-dom/lib/ReactDOMFiber.js",
+    "disable:asyncschedule": "sed -i -e 's/useSyncScheduling: true/useSyncScheduling: true/' node_modules/react-dom/lib/ReactDOMFiber.js",
+    "build": "webpack",
+    "build:async": "npm run enable:asyncschedule && npm run build",
+    "build:sync": "npm run disable:asyncschedule && npm run build",
+    "start": "webpack-dev-server",
+    "start:async": "npm run enable:asyncschedule && npm start",
+    "start:sync": "npm run disable:asyncschedule && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "koba04",
+  "license": "MIT",
+  "dependencies": {
+    "react": "next",
+    "react-dom": "next"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
