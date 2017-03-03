@@ -175,6 +175,17 @@ export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
 };
 ```
 
+## ReactNoop
+
+ReactNoop is a renderer for ReactFiber, which is using for testing and debugging.
+It is very useful to understand ReactFiber renderer!! :eyes:
+
+* https://github.com/facebook/react/blob/master/src/renderers/noop/ReactNoop.js
+
+Bonus: You should watch `ReactIncremental-test`, which helps to understand what ReactFiber makes it possible
+
+* https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/__tests__/ReactIncremental-test.js
+
 ## Examples
 
 * https://koba04.github.io/react-fiber-resources/examples/
