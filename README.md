@@ -77,9 +77,13 @@ This call stacks are results in the time when it bahaved as asynclonous.
 ![ReactFiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
 
 ```
---- working asynchlonously with requestIdleCallback -----------    ------------------------------------------
-| begin -> complete -> begin -> complete -> begin -> complete | -> | commit(flush side effects to the host) |
----------------------------------------------------------------    -------------------------------------------
+--- working asynchlonously with requestIdleCallback -----------
+| begin -> complete -> begin -> complete -> begin -> complete |
+---------------------------------------------------------------
+                      ↓↓↓
+------------------------------------------
+| commit(flush side effects to the host) |
+------------------------------------------
 ```
 
 ### ReactDOMFiber with 10000 items (Sync Scheduling)
