@@ -202,6 +202,10 @@ Bonus: You should watch `ReactIncremental-test`, which helps to understand what 
 
 | No | Title | Author | Status |
 | --- | ----- | ------ | ------ |
+| [#9103](https://github.com/facebook/react/issues/9103) | RFC: ReactFiberReconciler release artifact | [@iamdustan](https://github.com/iamdustan) | |
+| [#9075](https://github.com/facebook/react/issues/9075) | React Perf Scenarios | [@sebmarkbage](https://github.com/sebmarkbage) | |
+| [#9072](https://github.com/facebook/react/issues/9072) | DOM reviving through DOM walking seems blocked by the ReactFiberReconciler API | [@aickin](https://github.com/aickin) | |
+| [#8830](https://github.com/facebook/react/issues/8830) | Umbrella for issues related to time-slicing (async scheduling) | [@acdlite](https://github.com/acdlite) | |
 | [#8238](https://github.com/facebook/react/issues/8238) | Handle errors in callbacks | [@acdlite](https://github.com/acdlite) | |
 | [#8181](https://github.com/facebook/react/issues/8181) | Error handling | [@gaearon](https://github.com/gaearon) | |
 | [#8012](https://github.com/facebook/react/issues/8012) | Formalize States | [@sebmarkbage](https://github.com/sebmarkbage) | |
