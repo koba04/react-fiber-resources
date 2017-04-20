@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "enable:asyncschedule": "sed -i -e 's/useSyncScheduling: true/useSyncScheduling: false/' node_modules/react-dom/lib/ReactDOMFiber.js",
-    "disable:asyncschedule": "sed -i -e 's/useSyncScheduling: true/useSyncScheduling: true/' node_modules/react-dom/lib/ReactDOMFiber.js",
+    "enable:asyncschedule": "sed -i -e 's/fiberAsyncScheduling: false/fiberAsyncScheduling: true/' node_modules/react-dom/cjs/react-dom.development.js",
+    "disable:asyncschedule": "sed -i -e 's/fiberAsyncScheduling: true/fiberAsyncScheduling: false/' node_modules/react-dom/cjs/react-dom.development.js",
     "build": "webpack",
     "build:async": "npm run enable:asyncschedule && npm run build",
     "build:sync": "npm run disable:asyncschedule && npm run build",
