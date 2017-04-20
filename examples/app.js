@@ -24,10 +24,12 @@ class Counter extends React.Component {
     };
   }
   tick() {
-    this.setState({
-      time: Date.now() - this.initialTime,
-    }, () => {
-      requestAnimationFrame(() => this.tick());
+    ReactDOM.unstable_deferredUpdates(() => {
+      this.setState({
+        time: Date.now() - this.initialTime,
+      }, () => {
+        requestAnimationFrame(() => this.tick());
+      });
     });
   }
   componentDidMount() {
@@ -46,7 +48,9 @@ const render = (element) => {
   container.innerHTML = '';
   ReactDOM.unmountComponentAtNode(container);
   container.appendChild(div);
-  ReactDOM.render(element, div);
+  ReactDOM.unstable_deferredUpdates(() => {
+    ReactDOM.render(element, div);
+  });
 };
 
 const Nav = () => (

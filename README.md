@@ -20,9 +20,26 @@ ReactFiber is a new React reconciler algorithm, which is in progress.
 
 ## Try ReactFiber with asynchronous scheduling!
 
-```a
+### Modify a flag for scheduling
+
+```
 npm i -S react@next react-dom@next
 sed -i -e 's/fiberAsyncScheduling: false/fiberAsyncScheduling: true/' node_modules/react-dom/cjs/react-dom.development.js
+```
+
+### Use ReactDOM.unstable_deferredUpdates
+
+```
+ReactDOM.render(<App />. container);
+```
+
+↓↓↓
+
+```
+// wrap your render method or setState.
+ReactDOM.unstable_deferredUpdates(() => {
+    ReactDOM.render(<App />. container);
+});
 ```
 
 ## How to contribute ReactFiber
