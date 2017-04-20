@@ -1,24 +1,24 @@
-# ReactFiber resources [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+# React Fiber resources [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
-This is for resources for ReactFiber.
+This is for resources for React Fiber.
 
-ReactFiber is a new React reconciler algorithm, which is in progress.
+React Fiber is a new React reconciler algorithm, which is in progress.
 
 ## Current Status?
 
 * [Is Fiber Ready Yet?](http://isfiberreadyyet.com/)
 * :eyes: [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
 
-## Test ReactFiber on facebook.com
+## Test React Fiber on facebook.com
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Want to see Fiber in action? You can now beta test Fiber on Facebook itself! Head over to <a href="https://t.co/5cHyMgk7PL">https://t.co/5cHyMgk7PL</a> for info. <a href="https://t.co/NItNdk1jQK">pic.twitter.com/NItNdk1jQK</a></p>&mdash; React (@reactjs) <a href="https://twitter.com/reactjs/status/822707133024112640">January 21, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* https://www.beta.facebook.com/ (facebook.com powered by ReactFiber)
-* https://www.facebook.com/groups/reactfiberbeta/ (a public channel for ReactFiber beta testers)
+* https://www.beta.facebook.com/ (facebook.com powered by React Fiber)
+* https://www.facebook.com/groups/reactfiberbeta/ (a public channel for React Fiber beta testers)
 
 
-## Try ReactFiber with asynchronous scheduling!
+## Try React Fiber with asynchronous scheduling!
 
 ### Modify a flag for scheduling
 
@@ -42,7 +42,7 @@ ReactDOM.unstable_deferredUpdates(() => {
 });
 ```
 
-## How to contribute ReactFiber
+## How to contribute React Fiber
 
 * https://github.com/facebook/react/issues/7925#issuecomment-259258900
 
@@ -75,14 +75,14 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Andrew Clark: What's Next for React — ReactNext 2016](https://www.youtube.com/watch?v=aV1271hd9ew)
 * [Why, What, and How of React Fiber with Dan Abramov and Andrew Clark](https://www.youtube.com/watch?v=crM1iRVGpGQ)
 
-## ReactFiber function call stacks
+## React Fiber function call stacks
 
-**[Note]** ReactFiber now behaves as synchlonous by default. See [#8127](https://github.com/facebook/react/pull/8127).
+**[Note]** React Fiber now behaves as synchlonous by default. See [#8127](https://github.com/facebook/react/pull/8127).
 This call stacks are results in the time when it bahaved as asynclonous.
 
 ### ReactDOMFiber
 
-![ReactFiber function call stack](./images/ReactDOMFiber.png)
+![React Fiber function call stack](./images/ReactDOMFiber.png)
 
 ### ReactDOM
 
@@ -90,7 +90,7 @@ This call stacks are results in the time when it bahaved as asynclonous.
 
 ### ReactDOMFiber with 10000 items (Async Scheduling)
 
-![ReactFiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
+![React Fiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
 
 ```
 --- working asynchlonously using requestIdleCallback -------------------------
@@ -106,13 +106,13 @@ This call stacks are results in the time when it bahaved as asynclonous.
 
 ### ReactDOMFiber with 10000 items (Sync Scheduling)
 
-![ReactFiber function call stack with 10000 items (sync)](./images/ReactDOMFiber-10000-items-sync.png)
+![React Fiber function call stack with 10000 items (sync)](./images/ReactDOMFiber-10000-items-sync.png)
 
 ### ReactDOM with 10000 items
 
 ![ReactDOMFiber function call stack with 10000 items](./images/ReactDOM-10000-items.png)
 
-## ReactFiber call tree
+## React Fiber call tree
 
 ![ReactDOMFiber call tree](./images/ReactDOMFiber-call-tree.png)
 
@@ -195,12 +195,12 @@ export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
 
 ## ReactNoop
 
-ReactNoop is a renderer for ReactFiber, which is using for testing and debugging.
-It is very useful to understand ReactFiber renderer!! :eyes:
+ReactNoop is a renderer for React Fiber, which is using for testing and debugging.
+It is very useful to understand React Fiber renderer!! :eyes:
 
 * https://github.com/facebook/react/blob/master/src/renderers/noop/ReactNoop.js
 
-Bonus: You should watch `ReactIncremental-test`, which helps to understand what ReactFiber makes it possible
+Bonus: You should watch `ReactIncremental-test`, which helps to understand what React Fiber makes it possible
 
 * https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/__tests__/ReactIncremental-test.js
 
