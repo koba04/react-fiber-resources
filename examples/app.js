@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var Hello = () => 'Hello ReactFiber';
+var Hello = () => 'Hello React Fiber';
 var List = () => [1, 2, 3];
 
 var items = [];
