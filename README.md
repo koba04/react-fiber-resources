@@ -29,6 +29,8 @@ sed -i -e 's/fiberAsyncScheduling: false/fiberAsyncScheduling: true/' node_modul
 
 ### Use ReactDOM.unstable_deferredUpdates
 
+ReactDOM.unstable_deferredUpdates makes the priority `lowPriority`.
+
 ```
 ReactDOM.render(<App />. container);
 ```
@@ -93,15 +95,15 @@ This call stacks are results in the time when it bahaved as asynclonous.
 ![React Fiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
 
 ```
---- working asynchlonously using requestIdleCallback -------------------------
-| ------- fiber -------    ------- fiber -------    ------ fiber -------     |
-| | begin -> complete | -> | begin -> complete | -> |begin -> complete | ... |
-| ---------------------    ---------------------    --------------------     |
-------------------------------------------------------------------------------
+--- working asynchlonously using requestIdleCallback -------------------------------------------------
+| ------- Fiber ---------------    ------- Fiber ---------------    ------ Fiber ---------------     |
+| | beginWork -> completeWork | -> | beginWork -> completeWork | -> |beginWork -> completeWork | ... |
+| -----------------------------   ------------------------------    ----------------------------     |
+------------------------------------------------------------------------------------------------------
                       ↓↓↓
-----------------------------------------------------------------
-| commit(flush side effects computed in the avobe to the host) |
-----------------------------------------------------------------
+-----------------------------------------------------------------------
+| commitAllWork(flush side effects computed in the avobe to the host) |
+-----------------------------------------------------------------------
 ```
 
 ### ReactDOMFiber with 10000 items (Sync Scheduling)
