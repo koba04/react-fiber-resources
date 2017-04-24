@@ -16871,7 +16871,7 @@ var ReactFiberScheduler = function (config) {
   }
 
   function commitAllWork(finishedWork) {
-    console.log('commitAllWork', finishedWork);
+    // console.log('commitAllWork', finishedWork);
     // We keep track of this so that captureError can collect any boundaries
     // that capture an error during the commit phase. The reason these aren't
     // local to this function is because errors that occur during cWU are
