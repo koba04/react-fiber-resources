@@ -17,11 +17,13 @@ export default class App extends React.Component {
     }
   }
   highPriUpdate(fn, cb) {
-    if (this.state.isAsync) {
-      requestAnimationFrame(() => this.setState(fn, cb));
-    } else {
-      this.setState(fn, cb);
-    }
+    // High Priority update is not same as wrapping rAF.
+    // Currently, we can'nt emulate it.
+    // if (this.state.isAsync) {
+    //  requestAnimationFrame(() => this.setState(fn, cb));
+    // } else {
+    this.setState(fn, cb);
+    // }
   }
   lowPriUpdate(fn, cb) {
     if (this.state.isAsync) {
