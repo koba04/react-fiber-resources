@@ -259,6 +259,8 @@ process.umask = function() { return 0; };
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
+console.log('hgoe');
+
 if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(41);
 } else {
@@ -2483,11 +2485,13 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     };
   }
   highPriUpdate(fn, cb) {
-    if (this.state.isAsync) {
-      requestAnimationFrame(() => this.setState(fn, cb));
-    } else {
-      this.setState(fn, cb);
-    }
+    // High Priority update is not same as wrapping rAF.
+    // Currently, we can'nt emulate it.
+    // if (this.state.isAsync) {
+    //  requestAnimationFrame(() => this.setState(fn, cb));
+    // } else {
+    this.setState(fn, cb);
+    // }
   }
   lowPriUpdate(fn, cb) {
     if (this.state.isAsync) {
@@ -3045,7 +3049,7 @@ var emptyObject = __webpack_require__(5);
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule reactProdInvariant
- *
+ * 
  */
 
 /**
@@ -3555,7 +3559,7 @@ var accumulateInto_1 = accumulateInto;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule forEachAccumulated
- *
+ * 
  */
 
 /**
@@ -4481,7 +4485,7 @@ var ReactDOMComponentFlags_1 = ReactDOMComponentFlags;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactTypeOfWork
- *
+ * 
  */
 
 var ReactTypeOfWork = {
@@ -4727,7 +4731,7 @@ var ReactDOMComponentTree_1 = ReactDOMComponentTree;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactFeatureFlags
- *
+ * 
  */
 
 var ReactFeatureFlags = {
@@ -4953,7 +4957,7 @@ var dangerousStyleValue_1 = dangerousStyleValue;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule getComponentName
- *
+ * 
  */
 
 function getComponentName(instanceOrFiber) {
@@ -5307,7 +5311,7 @@ var ReactInvalidSetStateWarningHook_1 = ReactInvalidSetStateWarningHook;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactHostOperationHistoryHook
- *
+ * 
  */
 
 // Trust the developer to only use this with a true check
@@ -6063,7 +6067,7 @@ var DOMPropertyOperations_1 = DOMPropertyOperations;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  * @providesModule ReactPropTypesSecret
  */
 
@@ -9208,7 +9212,7 @@ var getEventTarget_1 = getEventTarget;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule isTextInputElement
- *
+ * 
  */
 
 /**
@@ -11479,7 +11483,7 @@ var ReactDOMInjection = {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactTypeOfSideEffect
- *
+ * 
  */
 
 var ReactTypeOfSideEffect = {
@@ -11502,7 +11506,7 @@ var ReactTypeOfSideEffect = {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactPriorityLevel
- *
+ * 
  */
 
 var ReactPriorityLevel = {
@@ -12274,7 +12278,7 @@ var ReactFiberStack = {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactDebugFiberPerf
- *
+ * 
  */
 
 var ReactDebugFiberPerf = null;
@@ -13200,7 +13204,7 @@ function logCapturedError$1(capturedError) {
     console.error(componentNameMessage + ' You should fix this error in your code. ' + errorBoundaryMessage + '\n\n' + (errorSummary + '\n\n') + ('The error is located at: ' + componentStack + '\n\n') + ('The error was thrown at: ' + formattedCallStack));
   }
 
-
+  
 }
 
 var injection$1 = {
@@ -13231,7 +13235,7 @@ var ReactFiberErrorLogger = {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactElementSymbol
- *
+ * 
  */
 
 // The Symbol used to tag the ReactElement type. If there is no native Symbol
@@ -13250,7 +13254,7 @@ var ReactElementSymbol = REACT_ELEMENT_TYPE;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactCoroutine
- *
+ * 
  */
 
 // The Symbol used to tag the special React types. If there is no native Symbol
@@ -13340,7 +13344,7 @@ var ReactCoroutine = {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactPortal
- *
+ * 
  */
 
 // The Symbol used to tag the special React types. If there is no native Symbol
@@ -13386,7 +13390,7 @@ var ReactPortal = {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule getIteratorFn
- *
+ * 
  */
 
 /* global Symbol */
@@ -16501,7 +16505,7 @@ var ReactFiberHostContext = function (config) {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactFiberInstrumentation
- *
+ * 
  */
 
 // This lets us hook into Fiber to debug what it's doing.
@@ -16871,7 +16875,6 @@ var ReactFiberScheduler = function (config) {
   }
 
   function commitAllWork(finishedWork) {
-    // console.log('commitAllWork', finishedWork);
     // We keep track of this so that captureError can collect any boundaries
     // that capture an error during the commit phase. The reason these aren't
     // local to this function is because errors that occur during cWU are
@@ -17121,13 +17124,11 @@ var ReactFiberScheduler = function (config) {
       startWorkTimer(workInProgress);
     }
     var next = beginWork(current, workInProgress, nextPriorityLevel);
-    // console.log('beginWork', workInProgress);
     if ('development' !== 'production' && ReactFiberInstrumentation$1.debugTool) {
       ReactFiberInstrumentation$1.debugTool.onBeginWork(workInProgress);
     }
 
     if (next === null) {
-      // console.log('completeWork', workInProgress);
       // If this doesn't spawn new work, complete the current work.
       next = completeUnitOfWork(workInProgress);
     }
@@ -17785,7 +17786,7 @@ var ReactFiberScheduler = function (config) {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule getContextForSubtree
- *
+ * 
  */
 
 
@@ -17936,7 +17937,7 @@ var ReactFiberReconciler = function (config) {
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule findDOMNode
- *
+ * 
  */
 
 
