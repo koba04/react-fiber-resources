@@ -67,10 +67,11 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Fiber Principles: Contributing To Fiber #7942](https://github.com/facebook/react/issues/7942)
 * [How React Fiber Works](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
 * [React Internals](https://zackargyle.github.io/react-internals-slides/)
-
+* [Capability of React Fiber](https://speakerdeck.com/koba04/capability-of-react-fiber)
 
 ## Videos
 
+* [Andrew Clark: Roadmap for React Fiber and Beyond](https://www.youtube.com/watch?v=QW5TE4vrklU)
 * [The Evolution of React and GraphQL at Facebook and Beyond](https://developers.facebook.com/videos/f8-2017/the-evolution-of-react-and-graphql-at-facebook-and-beyond/)
 * [Lin Clark - A Cartoon Intro to Fiber - React Conf 2017](https://www.youtube.com/watch?v=ZCuYPiUIONs)
 * [Sebastian Markbåge - React Performance End to End (React Fiber)](https://www.youtube.com/watch?v=bvFpe5j9-zQ)
