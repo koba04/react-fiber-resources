@@ -138,62 +138,192 @@ You should implement the following interface when create a custom fiber renderer
 
 ```js
 export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
-
-  getRootHostContext(rootContainerInstance : C) : CX,
-  getChildHostContext(parentHostContext : CX, type : T) : CX,
-  getPublicInstance(instance : I | TI) : PI,
-
+  getRootHostContext(rootContainerInstance: C): CX {
+    // e.g. namespace of DOM
+  },
+  getChildHostContext(parentHostContext: CX, type: T, instance: C): CX {
+    // e.g. namespace of DOM
+  },
+  getPublicInstance(instance: I | TI): PI {
+    // e.g. DOM Element
+  },
   createInstance(
-    type : T,
-    props : P,
-    rootContainerInstance : C,
-    hostContext : CX,
-    internalInstanceHandle : OpaqueHandle
-  ) : I,
-  appendInitialChild(parentInstance : I, child : I | TI) : void,
-  finalizeInitialChildren(parentInstance : I, type : T, props : P, rootContainerInstance : C) : boolean,
-
+    type: T,
+    props: P,
+    rootContainerInstance: C,
+    hostContext: CX,
+    internalInstanceHandle: OpaqueHandle,
+  ): I {
+    // e.g. DOM Element
+  },
+  appendInitialChild(parentInstance: I, child: I | TI): void {
+    // append child into parentInstance
+  },
+  finalizeInitialChildren(
+    parentInstance: I,
+    type: T,
+    props: P,
+    rootContainerInstance: C,
+  ): boolean {
+    // set props
+    // ReactDOMFiber returns a flag whether a DOM should be focused or not.
+  },
   prepareUpdate(
-    instance : I,
-    type : T,
-    oldProps : P,
-    newProps : P,
-    rootContainerInstance : C,
-    hostContext : CX
-  ) : null | PL,
+    instance: I,
+    type: T,
+    oldProps: P,
+    newProps: P,
+    rootContainerInstance: C,
+    hostContext: CX,
+  ): null | PL {
+    // calculate the diff between oldProps and newProps
+  },
   commitUpdate(
-    instance : I,
-    updatePayload : PL,
-    type : T,
-    oldProps : P,
-    newProps : P,
-    internalInstanceHandle : OpaqueHandle
-  ) : void,
-  commitMount(instance : I, type : T, newProps : P, internalInstanceHandle : OpaqueHandle) : void,
-
-  shouldSetTextContent(props : P) : boolean,
-  resetTextContent(instance : I) : void,
-
+    instance: I,
+    updatePayload: PL,
+    type: T,
+    oldProps: P,
+    newProps: P,
+    internalInstanceHandle: OpaqueHandle,
+  ): void,
+  commitMount(
+    instance: I,
+    type: T,
+    newProps: P,
+    internalInstanceHandle: OpaqueHandle,
+  ): void {
+     // If finalizeInitialChildren returns true, this method is called
+  },
+  shouldSetTextContent(type: T, props: P): boolean {
+    // whether having text content(e.g. children, dangerouslySetInnerHTML)
+  },
+  resetTextContent(instance: I): void {
+    // reset instance's text content
+  },
+  shouldDeprioritizeSubtree(type: T, props: P): boolean {
+    // ReactDOMFiber
+    // return !!props.hidden;
+  },
   createTextInstance(
-    text : string,
-    rootContainerInstance : C,
-    hostContext : CX,
-    internalInstanceHandle : OpaqueHandle
-  ) : TI,
-  commitTextUpdate(textInstance : TI, oldText : string, newText : string) : void,
-
-  appendChild(parentInstance : I | C, child : I | TI) : void,
-  insertBefore(parentInstance : I | C, child : I | TI, beforeChild : I | TI) : void,
-  removeChild(parentInstance : I | C, child : I | TI) : void,
-
-  scheduleAnimationCallback(callback : () => void) : number | void,
-  scheduleDeferredCallback(callback : (deadline : Deadline) => void) : number | void,
-
-  prepareForCommit() : void,
-  resetAfterCommit() : void,
-
-  useSyncScheduling ?: boolean,
+    text: string,
+    rootContainerInstance: C,
+    hostContext: CX,
+    internalInstanceHandle: OpaqueHandle,
+  ): TI {
+    // create a text instance
+    // ReactDOMFiber returns textNode
+  },
+  commitTextUpdate(textInstance: TI, oldText: string, newText: string): void {
+    // Update the textInstance
+    // ReactFiberFiber updates nodeValue of the textInstance
+  },
+  appendChild(parentInstance: I | C, child: I | TI): void {
+    // appendChild
+  },
+  appendChildToContainer(container: C, child: I | TI): void {
+    // appendChild to container
+    // container means HostContainer or HostRoot or HostPortal
+  },
+  insertBefore(parentInstance: I | C, child: I | TI, beforeChild: I | TI): void {
+   // insert child before beforeChild
+  },
+  insertInContainerBefore(
+    container: C,
+    child: I | TI,
+    beforeChild: I | TI,
+  ): void {
+   // insert child into container before beforeChild
+  },
+  removeChild(parentInstance: I | C, child: I | TI): void {
+    // remove child
+  },
+  removeChildFromContainer(container: C, child: I | TI): void {
+    // remove child from container
+  },
+  scheduleDeferredCallback(
+    callback: (deadline: Deadline) => void,
+  ): number | void {
+    // requestIdleCallback
+  },
+  prepareForCommit(): void {
+    // called before commit side effects
+    // disabled event listener temporary
+  },
+  resetAfterCommit(): void {
+    // called after commit
+    // restore event listener setting
+  },
+  // Optional hydration
+  canHydrateInstance?: (instance: I | TI, type: T, props: P) => boolean {
+    // Can instance be hydrated?
+    // ReactDOMFiber
+    // return instance.nodeType === 1 && type === instance.nodeName.toLowerCase();
+  },
+  canHydrateTextInstance?: (instance: I | TI) => boolean {
+   // Can text instance be hydrated?
+   // ReactDOMFiber
+   // return instance.nodeType === 3;
+  },
+  getNextHydratableSibling?: (instance: I | TI) => null | I | TI {
+    // return a next sibling node
+  },
+  getFirstHydratableChild?: (parentInstance: C | I) => null | I | TI {
+    // return a first child node
+  },
+  hydrateInstance?: (
+    instance: I,
+    type: T,
+    props: P,
+    rootContainerInstance: C,
+    internalInstanceHandle: OpaqueHandle,
+  ) => null | PL {
+    // hydrate instance
+    },
+  hydrateTextInstance?: (
+    textInstance: TI,
+    text: string,
+    internalInstanceHandle: OpaqueHandle,
+  ) => boolean {
+    // hydrate text instance
+  },
+  useSyncScheduling?: boolean, // sync by default?
 };
+```
+
+### Toy custom renderers
+
+* Console Renderer
+
+https://gist.github.com/koba04/963c9b3d16b372d6420f397ae97c55a5
+
+```js
+    ReactConsole.render(
+      <div>
+        <red>Hello</red>
+        <yellow>World</yellow>
+        <cyan>React</cyan>
+        <rainbow>Custom Renderer!</rainbow>
+      </div>,
+      () => console.log(colors.inverse('##### Update ######'))
+    );
+    ReactConsole.render(
+      <div>
+        <green>Hello</green>
+        <yellow>World2</yellow>
+        <cyan>React</cyan>
+      </div>
+    );
+```
+
+* Voice Renderer
+
+https://gist.github.com/koba04/19e896afc276a2eac7d9e0660026f16d
+
+```js
+    ReactVoice.render([
+      <alex key={1}>Hello</alex>,
+      <victoria key={2}>React Fiber</victoria>,
+    ]);
 ```
 
 ## ReactNoop
