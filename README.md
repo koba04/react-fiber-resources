@@ -68,6 +68,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [How React Fiber Works](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
 * [React Internals](https://zackargyle.github.io/react-internals-slides/)
 * [Capability of React Fiber](https://speakerdeck.com/koba04/capability-of-react-fiber)
+* [A look inside React Fiber - how work will get done](http://makersden.io/blog/look-inside-fiber/)
 
 ## Videos
 
@@ -77,11 +78,12 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Sebastian Markbåge - React Performance End to End (React Fiber)](https://www.youtube.com/watch?v=bvFpe5j9-zQ)
 * [Andrew Clark: What's Next for React — ReactNext 2016](https://www.youtube.com/watch?v=aV1271hd9ew)
 * [Why, What, and How of React Fiber with Dan Abramov and Andrew Clark](https://www.youtube.com/watch?v=crM1iRVGpGQ)
+* [A tiny Fiber renderer](https://www.youtube.com/watch?v=U9zFfIww3Go)
 
 ## React Fiber function call stacks
 
-**[Note]** React Fiber now behaves as synchlonous by default. See [#8127](https://github.com/facebook/react/pull/8127).
-This call stacks are results in the time when it bahaved as asynclonous.
+**[Note]** React Fiber now behaves as synchronous by default. See [#8127](https://github.com/facebook/react/pull/8127).
+This call stacks are results in the time when it behaved as asynchronous.
 
 ### ReactDOMFiber
 
@@ -96,14 +98,14 @@ This call stacks are results in the time when it bahaved as asynclonous.
 ![React Fiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
 
 ```
---- working asynchlonously using requestIdleCallback -------------------------------------------------
+--- working asynchronously using requestIdleCallback -------------------------------------------------
 | ------- Fiber ---------------    ------- Fiber ---------------    ------ Fiber ---------------     |
 | | beginWork -> completeWork | -> | beginWork -> completeWork | -> |beginWork -> completeWork | ... |
 | -----------------------------   ------------------------------    ----------------------------     |
 ------------------------------------------------------------------------------------------------------
                       ↓↓↓
 -----------------------------------------------------------------------
-| commitAllWork(flush side effects computed in the avobe to the host) |
+| commitAllWork(flush side effects computed in the above to the host) |
 -----------------------------------------------------------------------
 ```
 
