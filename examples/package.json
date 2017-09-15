@@ -4,22 +4,16 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "enable:asyncschedule": "sed -i -e 's/fiberAsyncScheduling: false/fiberAsyncScheduling: true/' node_modules/react-dom/cjs/react-dom.development.js",
-    "disable:asyncschedule": "sed -i -e 's/fiberAsyncScheduling: true/fiberAsyncScheduling: false/' node_modules/react-dom/cjs/react-dom.development.js",
     "build": "webpack",
-    "build:async": "npm run enable:asyncschedule && npm run build",
-    "build:sync": "npm run disable:asyncschedule && npm run build",
     "start": "webpack-dev-server",
-    "start:async": "npm run enable:asyncschedule && npm start",
-    "start:sync": "npm run disable:asyncschedule && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "koba04",
   "license": "MIT",
   "dependencies": {
-    "react": "next",
-    "react-dom": "next"
+    "react": "16.0.0-rc.3",
+    "react-dom": "16.0.0-rc.3"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
