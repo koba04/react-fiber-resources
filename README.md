@@ -73,6 +73,12 @@ ReactDOM.flushSync(() => {
 });
 ```
 
+## Examples
+
+If you can't get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome :smile:
+
+* https://koba04.github.io/react-fiber-resources/examples/
+
 ## How to contribute React Fiber
 
 * https://github.com/facebook/react/issues/7925#issuecomment-259258900
@@ -367,9 +373,3 @@ It is very useful to understand React Fiber renderer!! :eyes:
 Bonus: You should watch `ReactIncremental-test`, which helps to understand what React Fiber makes it possible
 
 * https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/__tests__/ReactIncremental-test.js
-
-## Examples
-
-If you can't get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome :smile:
-
-* https://koba04.github.io/react-fiber-resources/examples/
