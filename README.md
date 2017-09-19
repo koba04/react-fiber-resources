@@ -27,21 +27,20 @@ ReactDOM.unstable_deferredUpdates(() => {
 
 ### 2. Use `React.unstable_AsyncComponent`
 
-Updates for child components of `React.unstable_AsyncComponent` are treated as Low Priority.
+`React.unstable_AsyncComponent` makes updates in child components asynchronous, which means the updates are treated as Low Priority.
 
-`React.unstable_AsyncComponent` is a new Component type like PureComponent.
-You can use the following ways.
+You can use `React.unstable_AsyncComponent` as just a component or as a base class like PureComponent.
 
 ```js
 const AsyncComponent = React.unstable_AsyncComponent;
 
 <AsyncComponent>
-  <Child /> // Low Priority
+  <App /> // Low Priority by default
 </AsyncComponent>
 
-const LowPriorityComponent extends AsyncComponent {
+// Low Priority by default
+const App extends AsyncComponent {
     render() {
-        // Low Priority;
         return <Child />
     }
 }
