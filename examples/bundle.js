@@ -1132,6 +1132,11 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         null,
         'Please try to input text and switch the mode.'
       ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        { style: { color: 'red' } },
+        'If you can\'t get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome'
+      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Tab__["a" /* default */], {
         isAsync: isAsync,
         onClick: value => this.setState(() => ({ isAsync: value, text: '' }))
