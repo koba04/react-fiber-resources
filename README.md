@@ -342,26 +342,3 @@ Bonus: You should watch `ReactIncremental-test`, which helps to understand what 
 ## Examples
 
 * https://koba04.github.io/react-fiber-resources/examples/
-
-
-## PRs
-
-* https://github.com/facebook/react/pulls?utf8=%E2%9C%93&q=is%3Apr%20Fiber
-
-
-## Issues
-
-| No | Title | Author | Status |
-| --- | ----- | ------ | ------ |
-| [#9103](https://github.com/facebook/react/issues/9103) | RFC: ReactFiberReconciler release artifact | [@iamdustan](https://github.com/iamdustan) | |
-| [#9075](https://github.com/facebook/react/issues/9075) | React Perf Scenarios | [@sebmarkbage](https://github.com/sebmarkbage) | |
-| [#9072](https://github.com/facebook/react/issues/9072) | DOM reviving through DOM walking seems blocked by the ReactFiberReconciler API | [@aickin](https://github.com/aickin) | |
-| [#8830](https://github.com/facebook/react/issues/8830) | Umbrella for issues related to time-slicing (async scheduling) | [@acdlite](https://github.com/acdlite) | |
-| [#8238](https://github.com/facebook/react/issues/8238) | Handle errors in callbacks | [@acdlite](https://github.com/acdlite) | |
-| [#8181](https://github.com/facebook/react/issues/8181) | Error handling | [@gaearon](https://github.com/gaearon) | |
-| [#8012](https://github.com/facebook/react/issues/8012) | Formalize States | [@sebmarkbage](https://github.com/sebmarkbage) | |
-| [#7942](https://github.com/facebook/react/issues/7942) | Fiber Principles: Contributing To Fiber | [@sebmarkbage](https://github.com/sebmarkbage) | |
-| [#7925](https://github.com/facebook/react/issues/7925) | Umbrella for remaining features / bugs | [@sebmarkbage](https://github.com/sebmarkbage) | |
-| [#7906](https://github.com/facebook/react/issues/7906) | Spill-over from child reconciliation | [@sebmarkbage](https://github.com/sebmarkbage) | |
-
-:heavy_check_mark: is a closed Issue.
