@@ -9,29 +9,68 @@ React Fiber is a new React reconciler algorithm, which is in progress.
 * [Is Fiber Ready Yet?](http://isfiberreadyyet.com/)
 * :eyes: [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
 
-## Try React Fiber with asynchronous scheduling!
+## Try React Fiber asynchronous rendering!
 
-### Modify a flag for scheduling
+You can try React Fiber asynchronous rendering by the following ways.
+
+### 1. Use `ReactDOM.unstable_deferredUpdates
+
+Inside a `ReactDOM.unstable_deferredUpdates` callback, the updates are treated as Low Priority.
+
+```js
+ReactDOM.unstable_deferredUpdates(() => {
+    ReactDOM.render(<App />. container);
+    // or
+    instance.setState(() => newState);
+});
+```
+
+### 2. Use `React.unstable_AsyncComponent`
+
+Updates for child components of `React.unstable_AsyncComponent` are treated as Low Priority.
+
+`React.unstable_AsyncComponent` is a new Component type like PureComponent.
+You can use the following ways.
+
+```js
+const AsyncComponent = React.unstable_AsyncComponent;
+
+<AsyncComponent>
+  <Child /> // Low Priority
+</AsyncComponent>
+
+const LowPriorityComponent extends AsyncComponent {
+    render() {
+        // Low Priority;
+        return <Child />
+    }
+}
+```
+
+If you'd like to use synchronous updates inside the component, you can use `ReactDOM.flushSync(cb)`.
+In side a `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v15.
+
+```js
+ReactDOM.flushSync(() => {
+    // Sync Priority for use input or an animation etc
+});
+```
+
+### 3. Modify a feature flag (`ReactDOMFeatureFlags.fiberAsyncScheduling`)
+
+If you are enable `ReactDOMFeatureFlags.fiberAsyncScheduling`, updates are treated as Low Priority by default.
 
 ```
 npm i -S react@next react-dom@next
 sed -i -e 's/fiberAsyncScheduling: false/fiberAsyncScheduling: true/' node_modules/react-dom/cjs/react-dom.development.js
 ```
 
-### Use ReactDOM.unstable_deferredUpdates
+If you'd like to use synchronous updates, you can use `ReactDOM.flushSync(cb)`.
+In side a `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v15.
 
-ReactDOM.unstable_deferredUpdates makes the priority `lowPriority`.
-
-```
-ReactDOM.render(<App />. container);
-```
-
-↓↓↓
-
-```
-// wrap your render method or setState.
-ReactDOM.unstable_deferredUpdates(() => {
-    ReactDOM.render(<App />. container);
+```js
+ReactDOM.flushSync(() => {
+    // Sync Priority for use input or an animation etc
 });
 ```
 
