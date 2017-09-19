@@ -341,6 +341,8 @@ Bonus: You should watch `ReactIncremental-test`, which helps to understand what 
 
 ## Examples
 
+If you can't get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome :smile:
+
 * https://koba04.github.io/react-fiber-resources/examples/
 
 

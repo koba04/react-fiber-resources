@@ -66,6 +66,7 @@ export default class App extends React.Component {
         <h2>A sample for React Fiber priorities</h2>
         <p>You can switch a rendering mode to Async or Sync.</p>
         <p>Please try to input text and switch the mode.</p>
+        <p style={{color: 'red'}}>If you can't get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome</p>
         <Tab
           isAsync={isAsync}
           onClick={value => this.setState(() => ({isAsync: value, text: ''}))}
