@@ -13,7 +13,7 @@ React Fiber is a new React reconciler algorithm, which is in progress.
 
 You can try React Fiber asynchronous rendering by the following ways.
 
-### 1. Use `ReactDOM.unstable_deferredUpdates
+### 1. Use `ReactDOM.unstable_deferredUpdates`
 
 Inside a `ReactDOM.unstable_deferredUpdates` callback, the updates are treated as Low Priority.
 
