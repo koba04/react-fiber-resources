@@ -95,6 +95,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [ReactFiber](https://github.com/facebook/react/tree/master/src/renderers/shared/fiber)
 * [ReactFiberDOM](https://github.com/facebook/react/tree/master/src/renderers/dom/fiber)
 * [Example](https://github.com/facebook/react/tree/master/examples/fiber)
+* [Fiber Debugger](http://fiber-debugger.surge.sh/)
 
 ## Articles & Slides
 
