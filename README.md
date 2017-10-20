@@ -105,6 +105,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [React Internals](https://zackargyle.github.io/react-internals-slides/)
 * [Capability of React Fiber](https://speakerdeck.com/koba04/capability-of-react-fiber)
 * [A look inside React Fiber - how work will get done](http://makersden.io/blog/look-inside-fiber/)
+* [Build your own React Fiber](https://engineering.hexacta.com/didact-fiber-incremental-reconciliation-b2fe028dcaec)
 
 ## Videos
 
