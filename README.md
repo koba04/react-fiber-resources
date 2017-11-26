@@ -87,14 +87,14 @@ If you can't get any diferrence between Async mode and Sync mode, you should use
 
 If you are not familiar with React internals, I recommend you to read the documentations, which are very helpful.
 
-* [Codebase Overview](https://facebook.github.io/react/contributing/codebase-overview.html)
-* [Implementation Notes](https://facebook.github.io/react/contributing/implementation-notes.html)
+* [Codebase Overview](https://reactjs.org/docs/codebase-overview.html)
+* [Implementation Notes](https://reactjs.org/docs/implementation-notes.html)
 
 ## React Fiber
 
-* [ReactFiber](https://github.com/facebook/react/tree/master/src/renderers/shared/fiber)
-* [ReactFiberDOM](https://github.com/facebook/react/tree/master/src/renderers/dom/fiber)
-* [Example](https://github.com/facebook/react/tree/master/examples/fiber)
+* [ReactFiber](https://github.com/facebook/react/tree/master/packages/react-reconciler/src)
+* [ReactFiberDOM](https://github.com/facebook/react/blob/master/packages/react-dom/src/client/ReactDOM.js)
+* [Example](https://github.com/facebook/react/blob/master/fixtures/fiber-triangle/index.html)
 * [Fiber Debugger](http://fiber-debugger.surge.sh/)
 
 ## Articles & Slides
@@ -173,40 +173,33 @@ This call stacks are results in the time when it behaved as asynchronous.
 
 You should implement the following interface when create a custom fiber renderer.
 
-* https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/ReactFiberReconciler.js
+* https://github.com/facebook/react/tree/master/packages/react-reconciler
+* https://github.com/facebook/react/blob/master/packages/react-reconciler/src/ReactFiberReconciler.js
 
 ```js
-export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
-  getRootHostContext(rootContainerInstance: C): CX {
-    // e.g. namespace of DOM
-  },
-  getChildHostContext(parentHostContext: CX, type: T, instance: C): CX {
-    // e.g. namespace of DOM
-  },
-  getPublicInstance(instance: I | TI): PI {
-    // e.g. DOM Element
-  },
+type OpaqueHandle = Fiber;
+type OpaqueRoot = FiberRoot;
+
+export type HostConfig<T, P, I, TI, HI, PI, C, CC, CX, PL> = {
+  getRootHostContext(rootContainerInstance: C): CX,
+  getChildHostContext(parentHostContext: CX, type: T, instance: C): CX,
+  getPublicInstance(instance: I | TI): PI,
+
   createInstance(
     type: T,
     props: P,
     rootContainerInstance: C,
     hostContext: CX,
     internalInstanceHandle: OpaqueHandle,
-  ): I {
-    // e.g. DOM Element
-  },
-  appendInitialChild(parentInstance: I, child: I | TI): void {
-    // append child into parentInstance
-  },
+  ): I,
+  appendInitialChild(parentInstance: I, child: I | TI): void,
   finalizeInitialChildren(
     parentInstance: I,
     type: T,
     props: P,
     rootContainerInstance: C,
-  ): boolean {
-    // set props
-    // ReactDOMFiber returns a flag whether a DOM should be focused or not.
-  },
+  ): boolean,
+
   prepareUpdate(
     instance: I,
     type: T,
@@ -214,118 +207,35 @@ export type HostConfig<T, P, I, TI, PI, C, CX, PL> = {
     newProps: P,
     rootContainerInstance: C,
     hostContext: CX,
-  ): null | PL {
-    // calculate the diff between oldProps and newProps
-  },
-  commitUpdate(
-    instance: I,
-    updatePayload: PL,
-    type: T,
-    oldProps: P,
-    newProps: P,
-    internalInstanceHandle: OpaqueHandle,
-  ): void,
-  commitMount(
-    instance: I,
-    type: T,
-    newProps: P,
-    internalInstanceHandle: OpaqueHandle,
-  ): void {
-     // If finalizeInitialChildren returns true, this method is called
-  },
-  shouldSetTextContent(type: T, props: P): boolean {
-    // whether having text content(e.g. children, dangerouslySetInnerHTML)
-  },
-  resetTextContent(instance: I): void {
-    // reset instance's text content
-  },
-  shouldDeprioritizeSubtree(type: T, props: P): boolean {
-    // ReactDOMFiber
-    // return !!props.hidden;
-  },
+  ): null | PL,
+
+  shouldSetTextContent(type: T, props: P): boolean,
+  shouldDeprioritizeSubtree(type: T, props: P): boolean,
+
   createTextInstance(
     text: string,
     rootContainerInstance: C,
     hostContext: CX,
     internalInstanceHandle: OpaqueHandle,
-  ): TI {
-    // create a text instance
-    // ReactDOMFiber returns textNode
-  },
-  commitTextUpdate(textInstance: TI, oldText: string, newText: string): void {
-    // Update the textInstance
-    // ReactFiberFiber updates nodeValue of the textInstance
-  },
-  appendChild(parentInstance: I | C, child: I | TI): void {
-    // appendChild
-  },
-  appendChildToContainer(container: C, child: I | TI): void {
-    // appendChild to container
-    // container means HostContainer or HostRoot or HostPortal
-  },
-  insertBefore(parentInstance: I | C, child: I | TI, beforeChild: I | TI): void {
-   // insert child before beforeChild
-  },
-  insertInContainerBefore(
-    container: C,
-    child: I | TI,
-    beforeChild: I | TI,
-  ): void {
-   // insert child into container before beforeChild
-  },
-  removeChild(parentInstance: I | C, child: I | TI): void {
-    // remove child
-  },
-  removeChildFromContainer(container: C, child: I | TI): void {
-    // remove child from container
-  },
+  ): TI,
+
   scheduleDeferredCallback(
     callback: (deadline: Deadline) => void,
-  ): number | void {
-    // requestIdleCallback
-  },
-  prepareForCommit(): void {
-    // called before commit side effects
-    // disabled event listener temporary
-  },
-  resetAfterCommit(): void {
-    // called after commit
-    // restore event listener setting
-  },
-  // Optional hydration
-  canHydrateInstance?: (instance: I | TI, type: T, props: P) => boolean {
-    // Can instance be hydrated?
-    // ReactDOMFiber
-    // return instance.nodeType === 1 && type === instance.nodeName.toLowerCase();
-  },
-  canHydrateTextInstance?: (instance: I | TI) => boolean {
-   // Can text instance be hydrated?
-   // ReactDOMFiber
-   // return instance.nodeType === 3;
-  },
-  getNextHydratableSibling?: (instance: I | TI) => null | I | TI {
-    // return a next sibling node
-  },
-  getFirstHydratableChild?: (parentInstance: C | I) => null | I | TI {
-    // return a first child node
-  },
-  hydrateInstance?: (
-    instance: I,
-    type: T,
-    props: P,
-    rootContainerInstance: C,
-    internalInstanceHandle: OpaqueHandle,
-  ) => null | PL {
-    // hydrate instance
-    },
-  hydrateTextInstance?: (
-    textInstance: TI,
-    text: string,
-    internalInstanceHandle: OpaqueHandle,
-  ) => boolean {
-    // hydrate text instance
-  },
-  useSyncScheduling?: boolean, // sync by default?
+    options?: {timeout: number},
+  ): number,
+  cancelDeferredCallback(callbackID: number): void,
+
+  prepareForCommit(): void,
+  resetAfterCommit(): void,
+
+  now(): number,
+
+  useSyncScheduling?: boolean,
+
+  +hydration?: HydrationHostConfig<T, P, I, TI, HI, C, CX, PL>,
+
+  +mutation?: MutableUpdatesHostConfig<T, P, I, TI, C, PL>,
+  +persistence?: PersistentUpdatesHostConfig<T, P, I, TI, C, CC, PL>,
 };
 ```
 
@@ -370,8 +280,8 @@ https://gist.github.com/koba04/19e896afc276a2eac7d9e0660026f16d
 ReactNoop is a renderer for React Fiber, which is using for testing and debugging.
 It is very useful to understand React Fiber renderer!! :eyes:
 
-* https://github.com/facebook/react/blob/master/src/renderers/noop/ReactNoop.js
+* https://github.com/facebook/react/tree/master/packages/react-noop-renderer
 
 Bonus: You should watch `ReactIncremental-test`, which helps to understand what React Fiber makes it possible
 
-* https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/__tests__/ReactIncremental-test.js
+* https://github.com/facebook/react/blob/master/packages/react-reconciler/src/__tests__/ReactIncremental-test.js
