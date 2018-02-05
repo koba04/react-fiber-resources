@@ -2,12 +2,7 @@
 
 This is for resources for React Fiber.
 
-React Fiber is a new React reconciler algorithm, which is in progress.
-
-## Current Status?
-
-* [Is Fiber Ready Yet?](http://isfiberreadyyet.com/)
-* :eyes: [Umbrella for remaining features / bugs #7925](https://github.com/facebook/react/issues/7925)
+React Fiber is a new React reconciler algorithm.
 
 ## Try React Fiber asynchronous rendering!
 
@@ -47,24 +42,6 @@ const App extends AsyncComponent {
 ```
 
 If you'd like to use synchronous updates inside the component, you can use `ReactDOM.flushSync(cb)`.
-In side a `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v15.
-
-```js
-ReactDOM.flushSync(() => {
-    // Sync Priority for use input or an animation etc
-});
-```
-
-### 3. Modify a feature flag (`ReactDOMFeatureFlags.fiberAsyncScheduling`)
-
-If you are enable `ReactDOMFeatureFlags.fiberAsyncScheduling`, updates are treated as Low Priority by default.
-
-```
-npm i -S react@next react-dom@next
-sed -i -e 's/fiberAsyncScheduling: false/fiberAsyncScheduling: true/' node_modules/react-dom/cjs/react-dom.development.js
-```
-
-If you'd like to use synchronous updates, you can use `ReactDOM.flushSync(cb)`.
 In side a `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v15.
 
 ```js
@@ -175,69 +152,6 @@ You should implement the following interface when create a custom fiber renderer
 
 * https://github.com/facebook/react/tree/master/packages/react-reconciler
 * https://github.com/facebook/react/blob/master/packages/react-reconciler/src/ReactFiberReconciler.js
-
-```js
-type OpaqueHandle = Fiber;
-type OpaqueRoot = FiberRoot;
-
-export type HostConfig<T, P, I, TI, HI, PI, C, CC, CX, PL> = {
-  getRootHostContext(rootContainerInstance: C): CX,
-  getChildHostContext(parentHostContext: CX, type: T, instance: C): CX,
-  getPublicInstance(instance: I | TI): PI,
-
-  createInstance(
-    type: T,
-    props: P,
-    rootContainerInstance: C,
-    hostContext: CX,
-    internalInstanceHandle: OpaqueHandle,
-  ): I,
-  appendInitialChild(parentInstance: I, child: I | TI): void,
-  finalizeInitialChildren(
-    parentInstance: I,
-    type: T,
-    props: P,
-    rootContainerInstance: C,
-  ): boolean,
-
-  prepareUpdate(
-    instance: I,
-    type: T,
-    oldProps: P,
-    newProps: P,
-    rootContainerInstance: C,
-    hostContext: CX,
-  ): null | PL,
-
-  shouldSetTextContent(type: T, props: P): boolean,
-  shouldDeprioritizeSubtree(type: T, props: P): boolean,
-
-  createTextInstance(
-    text: string,
-    rootContainerInstance: C,
-    hostContext: CX,
-    internalInstanceHandle: OpaqueHandle,
-  ): TI,
-
-  scheduleDeferredCallback(
-    callback: (deadline: Deadline) => void,
-    options?: {timeout: number},
-  ): number,
-  cancelDeferredCallback(callbackID: number): void,
-
-  prepareForCommit(): void,
-  resetAfterCommit(): void,
-
-  now(): number,
-
-  useSyncScheduling?: boolean,
-
-  +hydration?: HydrationHostConfig<T, P, I, TI, HI, C, CX, PL>,
-
-  +mutation?: MutableUpdatesHostConfig<T, P, I, TI, C, PL>,
-  +persistence?: PersistentUpdatesHostConfig<T, P, I, TI, C, CC, PL>,
-};
-```
 
 ### Toy custom renderers
 
