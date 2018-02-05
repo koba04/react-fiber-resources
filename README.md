@@ -196,6 +196,6 @@ It is very useful to understand React Fiber renderer!! :eyes:
 
 * https://github.com/facebook/react/tree/master/packages/react-noop-renderer
 
-Bonus: You should watch `ReactIncremental-test`, which helps to understand what React Fiber makes it possible
+Bonus: You should watch `ReactIncremental-test.internal.js`, which helps to understand what React Fiber makes it possible
 
-* https://github.com/facebook/react/blob/master/packages/react-reconciler/src/__tests__/ReactIncremental-test.js
+* https://github.com/facebook/react/blob/master/packages/react-reconciler/src/__tests__/ReactIncremental-test.internal.js
