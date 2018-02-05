@@ -155,38 +155,38 @@ You should implement the following interface when create a custom fiber renderer
 
 ### Toy custom renderers
 
+* https://github.com/koba04/react-fiber-resources/tree/master/toy-renderers
+
 * Console Renderer
 
-https://gist.github.com/koba04/963c9b3d16b372d6420f397ae97c55a5
-
 ```js
-    ReactConsole.render(
-      <div>
-        <red>Hello</red>
-        <yellow>World</yellow>
-        <cyan>React</cyan>
-        <rainbow>Custom Renderer!</rainbow>
-      </div>,
-      () => console.log(colors.inverse('##### Update ######'))
-    );
-    ReactConsole.render(
-      <div>
-        <green>Hello</green>
-        <yellow>World2</yellow>
-        <cyan>React</cyan>
-      </div>
-    );
+ReactConsole.render(
+  <>
+    <red>Hello</red>
+    <yellow>World</yellow>
+    <cyan>React</cyan>
+    <rainbow>Custom Renderer!</rainbow>
+  </>,
+  () => console.log(colors.inverse('##### Update ######'))
+);
+ReactConsole.render(
+  <>
+    <green>Hello</green>
+    <yellow>World2</yellow>
+    <cyan>React</cyan>
+  </>
+);
 ```
 
 * Voice Renderer
 
-https://gist.github.com/koba04/19e896afc276a2eac7d9e0660026f16d
-
 ```js
-    ReactVoice.render([
-      <alex key={1}>Hello</alex>,
-      <victoria key={2}>React Fiber</victoria>,
-    ]);
+    ReactVoice.render(
+      <>
+        <alex>Hello</alex>
+        <victoria>React Fiber</victoria>
+      </>
+    );
 ```
 
 ## ReactNoop

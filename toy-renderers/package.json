@@ -1,0 +1,24 @@
+{
+  "name": "toy-renderers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "console": "babel-node console.js",
+    "voice": "babel-node voice.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "koba04",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/node": "^7.0.0-beta.39",
+    "@babel/preset-react": "^7.0.0-beta.39",
+    "colors": "^1.1.2",
+    "react": "^16.2.0",
+    "react-reconciler": "^0.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39"
+  }
+}
