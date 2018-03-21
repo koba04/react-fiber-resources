@@ -1,25 +1,26 @@
 {
   "name": "react-fiber-examples",
   "version": "1.0.0",
-  "description": "",
+  "description": "Resources for ReactFiber",
   "main": "app.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["react", "react-fiber"],
   "author": "koba04",
   "license": "MIT",
   "dependencies": {
-    "react": "16.0.0-rc.3",
-    "react-dom": "16.0.0-rc.3"
+    "react": "^16.3.0-alpha.2",
+    "react-dom": "^16.3.0-alpha.2"
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-preset-react": "^6.23.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "babel-loader": "^8.0.0-beta.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
   }
 }
