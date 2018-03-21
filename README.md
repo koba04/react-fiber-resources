@@ -24,21 +24,12 @@ ReactDOM.unstable_deferredUpdates(() => {
 
 `React.unstable_AsyncMode` is a Component to make updates in child components asynchronous, which means the updates are treated as Low Priority.
 
-You can use `React.unstable_AsyncMode` as just a component or as a base class like PureComponent.
-
 ```js
 const AsyncMode = React.unstable_AsyncMode;
 
 <AsyncMode>
   <App /> // Low Priority by default
 </AsyncMode>
-
-// Low Priority by default
-const App extends AsyncMode {
-    render() {
-        return <Child />
-    }
-}
 ```
 
 If you'd like to use synchronous updates inside the component, you can use `ReactDOM.flushSync(cb)`.
