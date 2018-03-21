@@ -1,8 +1,8 @@
 # React Fiber resources [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
-This is for resources for React Fiber.
+This is a repository of resources for React Fiber.
 
-React Fiber is a new React reconciler algorithm.
+React Fiber is a new React reconciler algorithm, which is used from v16.
 
 ## Try React Fiber asynchronous rendering!
 
@@ -20,21 +20,21 @@ ReactDOM.unstable_deferredUpdates(() => {
 });
 ```
 
-### 2. Use `React.unstable_AsyncComponent`
+### 2. Use `React.unstable_AsyncMode`
 
-`React.unstable_AsyncComponent` makes updates in child components asynchronous, which means the updates are treated as Low Priority.
+`React.unstable_AsyncMode` is a Component to make updates in child components asynchronous, which means the updates are treated as Low Priority.
 
-You can use `React.unstable_AsyncComponent` as just a component or as a base class like PureComponent.
+You can use `React.unstable_AsyncMode` as just a component or as a base class like PureComponent.
 
 ```js
-const AsyncComponent = React.unstable_AsyncComponent;
+const AsyncMode = React.unstable_AsyncMode;
 
-<AsyncComponent>
+<AsyncMode>
   <App /> // Low Priority by default
-</AsyncComponent>
+</AsyncMode>
 
 // Low Priority by default
-const App extends AsyncComponent {
+const App extends AsyncMode {
     render() {
         return <Child />
     }
@@ -42,7 +42,7 @@ const App extends AsyncComponent {
 ```
 
 If you'd like to use synchronous updates inside the component, you can use `ReactDOM.flushSync(cb)`.
-In side a `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v15.
+Inside of the `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v16.
 
 ```js
 ReactDOM.flushSync(() => {
@@ -52,6 +52,8 @@ ReactDOM.flushSync(() => {
 
 ## Examples
 
+You can try the React Fiber's time slicing feature in the following example.
+In the example, you would realize that low priorities updates don't block sync priority updates.
 If you can't get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome :smile:
 
 * https://koba04.github.io/react-fiber-resources/examples/
@@ -86,6 +88,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 ## Videos
 
+* [Dan Abramov: Beyond React 16](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html)
 * [Andrew Clark: Roadmap for React Fiber and Beyond](https://www.youtube.com/watch?v=QW5TE4vrklU)
 * [The Evolution of React and GraphQL at Facebook and Beyond](https://developers.facebook.com/videos/f8-2017/the-evolution-of-react-and-graphql-at-facebook-and-beyond/)
 * [Lin Clark - A Cartoon Intro to Fiber - React Conf 2017](https://www.youtube.com/watch?v=ZCuYPiUIONs)
