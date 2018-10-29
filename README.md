@@ -8,28 +8,16 @@ React Fiber is a new React reconciler algorithm, which is used from v16.
 
 You can try React Fiber asynchronous rendering by the following ways.
 
-### 1. Use `ReactDOM.unstable_deferredUpdates`
+### 1. Use `React.unstable_ConcurrentMode`
 
-Inside a `ReactDOM.unstable_deferredUpdates` callback, the updates are treated as Low Priority.
-
-```js
-ReactDOM.unstable_deferredUpdates(() => {
-    ReactDOM.render(<App />. container);
-    // or
-    instance.setState(() => newState);
-});
-```
-
-### 2. Use `React.unstable_AsyncMode`
-
-`React.unstable_AsyncMode` is a Component to make updates in child components asynchronous, which means the updates are treated as Low Priority.
+`React.unstable_ConcurrentMode` is a Component to make updates in child components asynchronous, which means the updates are treated as Low Priority.
 
 ```js
-const AsyncMode = React.unstable_AsyncMode;
+const ConcurrentMode = React.unstable_ConcurrentMode;
 
-<AsyncMode>
+<ConcurrentMode>
   <App /> // Low Priority by default
-</AsyncMode>
+</ConcurrentMode>
 ```
 
 If you'd like to use synchronous updates inside the component, you can use `ReactDOM.flushSync(cb)`.
