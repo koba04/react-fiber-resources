@@ -1,49 +1,16 @@
 # React Fiber resources [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
-This is a repository of resources for React Fiber.
+This is a repository for resources about React Fiber.
 
-React Fiber is a new React reconciler algorithm, which is used from v16.
+React Fiber is a new React reconciliation algorithm, which started using from v16. React Fiber makes many features like Suspense and Concurrent Mode possible.
 
-## Try React Fiber asynchronous rendering!
+Concurrent Mode is still in experimental stage, but React already has the documentation so you can see what Concurrent Mode makes possible at the documentation.
 
-You can try React Fiber asynchronous rendering by the following ways.
-
-### 1. Use `React.unstable_ConcurrentMode`
-
-`React.unstable_ConcurrentMode` is a Component to make updates in child components asynchronous, which means the updates are treated as Low Priority.
-
-```js
-const ConcurrentMode = React.unstable_ConcurrentMode;
-
-<ConcurrentMode>
-  <App /> // Low Priority by default
-</ConcurrentMode>
-```
-
-If you'd like to use synchronous updates inside the component, you can use `ReactDOM.flushSync(cb)`.
-Inside of the `ReactDOM.flushSync` callback, the updates are treated as Sync Priority, which is the default priority of v16.
-
-```js
-ReactDOM.flushSync(() => {
-    // Sync Priority for use input or an animation etc
-});
-```
-
-## Examples
-
-You can try the React Fiber's time slicing feature in the following example.
-In the example, you would realize that low priorities updates don't block sync priority updates.
-If you can't get any diferrence between Async mode and Sync mode, you should use CPU throttling on Chrome :smile:
-
-* https://koba04.github.io/react-fiber-resources/examples/
-
-## How to contribute React Fiber
-
-* https://github.com/facebook/react/issues/7925#issuecomment-259258900
+https://reactjs.org/docs/concurrent-mode-intro.html
 
 ## React internal algorithm
 
-If you are not familiar with React internals, I recommend you to read the documentations, which are very helpful.
+If you are not familiar with React internals, I recommend you reading the documentations first, which are very helpful resources.
 
 * [Codebase Overview](https://reactjs.org/docs/codebase-overview.html)
 * [Implementation Notes](https://reactjs.org/docs/implementation-notes.html)
@@ -52,7 +19,6 @@ If you are not familiar with React internals, I recommend you to read the docume
 
 * [ReactFiber](https://github.com/facebook/react/tree/master/packages/react-reconciler/src)
 * [ReactFiberDOM](https://github.com/facebook/react/blob/master/packages/react-dom/src/client/ReactDOM.js)
-* [Example](https://github.com/facebook/react/blob/master/fixtures/fiber-triangle/index.html)
 * [Fiber Debugger](http://fiber-debugger.surge.sh/)
 
 ## Articles & Slides
@@ -64,6 +30,7 @@ If you are not familiar with React internals, I recommend you to read the docume
 * [Capability of React Fiber](https://speakerdeck.com/koba04/capability-of-react-fiber)
 * [A look inside React Fiber - how work will get done](http://makersden.io/blog/look-inside-fiber/)
 * [Build your own React Fiber](https://engineering.hexacta.com/didact-fiber-incremental-reconciliation-b2fe028dcaec)
+* [Algorithms in React](https://speakerdeck.com/koba04/algorithms-in-react)
 
 ## Videos
 
@@ -94,7 +61,7 @@ This call stacks are results in the time when it behaved as asynchronous.
 ![React Fiber function call stack with 10000 items (async)](./images/ReactDOMFiber-10000-items-async.png)
 
 ```
---- working asynchronously using requestIdleCallback -------------------------------------------------
+--- working asynchronously ---------------------------------------------------------------------------
 | ------- Fiber ---------------    ------- Fiber ---------------    ------ Fiber ---------------     |
 | | beginWork -> completeWork | -> | beginWork -> completeWork | -> |beginWork -> completeWork | ... |
 | -----------------------------   ------------------------------    ----------------------------     |
@@ -130,45 +97,33 @@ This call stacks are results in the time when it behaved as asynchronous.
 
 ## Custom Renderer Interface
 
-You should implement the following interface when create a custom fiber renderer.
+React doesn't depend on any specific environments like DOM and React provides us a way to create own custom renderers based on Fiber reconciliation. ReactDOM and ReactNative are implemented as one of the custom renderers.
 
-* https://github.com/facebook/react/tree/master/packages/react-reconciler
-* https://github.com/facebook/react/blob/master/packages/react-reconciler/src/ReactFiberReconciler.js
+I've presented about the custom renderer; here is the link to the slide.
 
-### Toy custom renderers
+* https://speakerdeck.com/koba04/make-it-declarative-with-react
+* https://github.com/koba04/jsconf-jp-presentation
 
-* https://github.com/koba04/react-fiber-resources/tree/master/toy-renderers
-
-* Console Renderer
+The following is a custom renderer named `react-fs`, which is a renderer for `fs` package
 
 ```js
-ReactConsole.render(
+const React = require('react');
+const { ReactFS } = require('@koba04/react-fs');
+
+const targetDir = "test-react-fs-project";
+ReactFS.render(
   <>
-    <red>Hello</red>
-    <yellow>World</yellow>
-    <cyan>React</cyan>
-    <rainbow>Custom Renderer!</rainbow>
+    <file name="README.md">
+      # Title
+    </file>
+    <directory name="src">
+      <file name="index.js">
+        console.log("Hello");
+      </file>
+    </directory>
   </>,
-  () => console.log(colors.inverse('##### Update ######'))
+  targetDir
 );
-ReactConsole.render(
-  <>
-    <green>Hello</green>
-    <yellow>World2</yellow>
-    <cyan>React</cyan>
-  </>
-);
-```
-
-* Voice Renderer
-
-```js
-    ReactVoice.render(
-      <>
-        <alex>Hello</alex>
-        <victoria>React Fiber</victoria>
-      </>
-    );
 ```
 
 ## ReactNoop
@@ -177,7 +132,3 @@ ReactNoop is a renderer for React Fiber, which is using for testing and debuggin
 It is very useful to understand React Fiber renderer!! :eyes:
 
 * https://github.com/facebook/react/tree/master/packages/react-noop-renderer
-
-Bonus: You should watch `ReactIncremental-test.internal.js`, which helps to understand what React Fiber makes it possible
-
-* https://github.com/facebook/react/blob/master/packages/react-reconciler/src/__tests__/ReactIncremental-test.internal.js
