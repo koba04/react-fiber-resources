@@ -31,6 +31,7 @@ If you are not familiar with React internals, I recommend you reading the docume
 * [A look inside React Fiber - how work will get done](http://makersden.io/blog/look-inside-fiber/)
 * [Build your own React Fiber](https://engineering.hexacta.com/didact-fiber-incremental-reconciliation-b2fe028dcaec)
 * [Algorithms in React](https://speakerdeck.com/koba04/algorithms-in-react)
+* [Implementation notes on react's scheduling model as of (shortly before) 16.8.0](https://gist.github.com/Jessidhia/49d0915b7e722dc5b49ab9779b5906e8)
 
 ## Videos
 
